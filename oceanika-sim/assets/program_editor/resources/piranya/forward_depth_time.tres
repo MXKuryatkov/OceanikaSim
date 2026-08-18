@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BlockWithTimeRes" format=3 uid="uid://cfvw1bspttjjx"]
+
+[ext_resource type="PackedScene" uid="uid://qaupfvkqv30a" path="res://assets/program_editor/blocks/program_block_with_time_preset.tscn" id="1_rmiho"]
+[ext_resource type="Script" uid="uid://c8bqd34kfcl6p" path="res://assets/program_editor/block_with_time_res.gd" id="2_7g2cs"]
+
+[resource]
+script = ExtResource("2_7g2cs")
+has_type = false
+block_preset = ExtResource("1_rmiho")
+block_name = "Вперед (глубина, время)"
+set_code_line = "move::Forward"
+metadata/_custom_type_script = "uid://c8bqd34kfcl6p"

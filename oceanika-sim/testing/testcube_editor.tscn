@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b1y0brd6yqbye"]
+
+[ext_resource type="Script" uid="uid://0ujw0a6b3clg" path="res://assets/editor/types/editor_scene.gd" id="1_yktee"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_24ent"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yktee"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="TestcubeEditor" type="MeshInstance3D" unique_id=1786924098]
+script = ExtResource("1_yktee")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1198123665]
+mesh = SubResource("BoxMesh_24ent")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=495202531]
+collision_layer = 2
+collision_mask = 0
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1985920252]
+shape = SubResource("BoxShape3D_yktee")

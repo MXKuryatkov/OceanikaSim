@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EditorObject" format=3 uid="uid://ddrkqxlep55cg"]
+
+[ext_resource type="PackedScene" uid="uid://ca0xc7s1b8uad" path="res://testing/testing_objects/physics_editor_cube.tscn" id="1_5sr2u"]
+[ext_resource type="PackedScene" uid="uid://dwftab83sii8o" path="res://testing/testing_objects/physics_cube.tscn" id="2_fxv6d"]
+[ext_resource type="Script" uid="uid://dw8elnv88x0do" path="res://assets/editor/types/editor_object.gd" id="3_5sr2u"]
+
+[resource]
+script = ExtResource("3_5sr2u")
+display_name = "Физический куб"
+editor_scene = ExtResource("1_5sr2u")
+race_scene = ExtResource("2_fxv6d")
+default_config = Dictionary[String, Variant]({
+"color": 3
+})
+type_map = Dictionary[String, String]({
+"color": "color"
+})
+metadata/_custom_type_script = "uid://dw8elnv88x0do"

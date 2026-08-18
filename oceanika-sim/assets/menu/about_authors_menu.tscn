@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://82hos3cevhve"]
+
+[ext_resource type="Theme" uid="uid://blclguf81pkdt" path="res://assets/menu/styles/font_theme.tres" id="1_r3x7w"]
+[ext_resource type="StyleBox" uid="uid://b62jkqoxscsxf" path="res://assets/menu/styles/panel.tres" id="2_h0q4f"]
+[ext_resource type="PackedScene" uid="uid://sjq2fodujlwm" path="res://assets/menu/exit_to_menu.tscn" id="3_r3x7w"]
+
+[node name="about_authors_menu" type="Control" unique_id=1908814290]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_r3x7w")
+
+[node name="race_choose_panel" type="Panel" parent="." unique_id=1371432066]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -323.0
+offset_top = -165.0
+offset_right = 323.0
+offset_bottom = 165.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_h0q4f")
+
+[node name="exit to menu" parent="race_choose_panel" unique_id=298768368 instance=ExtResource("3_r3x7w")]
+layout_mode = 1
+offset_right = 141.0
+
+[node name="Label" type="Label" parent="race_choose_panel" unique_id=963759023]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.5
+offset_right = 20.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2

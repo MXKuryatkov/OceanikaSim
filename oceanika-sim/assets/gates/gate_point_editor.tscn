@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b4uiunqk2ajl5"]
+
+[ext_resource type="PackedScene" uid="uid://cxaoenxgl7u2j" path="res://assets/gates/race_point_editor.tscn" id="1_ly2ny"]
+[ext_resource type="Script" uid="uid://nfxh1akb1hse" path="res://assets/gates/colorful_body_editor.gd" id="2_85kup"]
+[ext_resource type="ArrayMesh" uid="uid://bye1mxyvopwek" path="res://assets/gates/obj/gate2.obj" id="3_5tsv4"]
+
+[node name="RacePointEditor" unique_id=387134693 node_paths=PackedStringArray("target") instance=ExtResource("1_ly2ny")]
+script = ExtResource("2_85kup")
+target = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="3" unique_id=551046171]
+transform = Transform3D(-2.8900635e-08, 0.66116947, -2.8900638e-08, 0, -2.8900638e-08, -0.66116947, -0.66116947, -2.8900635e-08, 1.2632869e-15, 0, 0, 0)
+mesh = ExtResource("3_5tsv4")

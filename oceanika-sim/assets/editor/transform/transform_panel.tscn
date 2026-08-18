@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://bibxkqo5a2k4x"]
+
+[ext_resource type="Theme" uid="uid://blclguf81pkdt" path="res://assets/menu/styles/font_theme.tres" id="1_8882t"]
+[ext_resource type="StyleBox" uid="uid://cv4vwathhelm8" path="res://assets/menu/styles/subpanel.tres" id="2_wu1n1"]
+[ext_resource type="Script" uid="uid://bgo8l1tgrd1to" path="res://assets/editor/transform/transform_panel.gd" id="3_sc8vf"]
+[ext_resource type="StyleBox" uid="uid://dn63ei5iq8w4k" path="res://assets/menu/styles/button_normal.tres" id="4_atl8a"]
+[ext_resource type="StyleBox" uid="uid://cq6cuq5lvnus1" path="res://assets/menu/styles/button_pressed.tres" id="5_ecfs6"]
+[ext_resource type="StyleBox" uid="uid://c0h7606hnkk6s" path="res://assets/menu/styles/button_hover.tres" id="6_ub7cn"]
+[ext_resource type="StyleBox" uid="uid://mhlru8l4tr4d" path="res://assets/menu/styles/button_focus.tres" id="7_t47jd"]
+
+[node name="transform_panel" type="Panel" unique_id=378687664]
+offset_right = 305.0
+offset_bottom = 134.0
+theme = ExtResource("1_8882t")
+theme_override_styles/panel = ExtResource("2_wu1n1")
+script = ExtResource("3_sc8vf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=394383436]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -56.0
+offset_right = 146.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pos" type="Label" parent="VBoxContainer" unique_id=1269078320]
+layout_mode = 2
+text = "Позиция:"
+
+[node name="pos_params" type="HBoxContainer" parent="VBoxContainer" unique_id=676983633]
+layout_mode = 2
+
+[node name="x" type="HBoxContainer" parent="VBoxContainer/pos_params" unique_id=584102841]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/pos_params/x" unique_id=670840690]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "x"
+
+[node name="x_pos" type="LineEdit" parent="VBoxContainer/pos_params/x" unique_id=1909930346]
+layout_mode = 2
+text = "123"
+max_length = 5
+select_all_on_focus = true
+
+[node name="y" type="HBoxContainer" parent="VBoxContainer/pos_params" unique_id=99898202]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/pos_params/y" unique_id=1388423258]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "y"
+
+[node name="y_pos" type="LineEdit" parent="VBoxContainer/pos_params/y" unique_id=207968333]
+layout_mode = 2
+text = "123"
+max_length = 5
+select_all_on_focus = true
+
+[node name="z" type="HBoxContainer" parent="VBoxContainer/pos_params" unique_id=1793124205]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/pos_params/z" unique_id=863758438]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.13725491, 0.54901963, 1, 1)
+text = "z"
+
+[node name="z_pos" type="LineEdit" parent="VBoxContainer/pos_params/z" unique_id=19875353]
+layout_mode = 2
+text = "123"
+max_length = 5
+select_all_on_focus = true
+
+[node name="rot" type="Label" parent="VBoxContainer" unique_id=1245284855]
+layout_mode = 2
+text = "Поворот:"
+
+[node name="rot_params" type="HBoxContainer" parent="VBoxContainer" unique_id=1823967465]
+layout_mode = 2
+
+[node name="x" type="HBoxContainer" parent="VBoxContainer/rot_params" unique_id=1485801447]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/rot_params/x" unique_id=1400486544]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "x"
+
+[node name="x_rot" type="LineEdit" parent="VBoxContainer/rot_params/x" unique_id=1847937319]
+layout_mode = 2
+text = "123"
+max_length = 5
+select_all_on_focus = true
+
+[node name="y" type="HBoxContainer" parent="VBoxContainer/rot_params" unique_id=87422683]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/rot_params/y" unique_id=1703685900]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "y"
+
+[node name="y_rot" type="LineEdit" parent="VBoxContainer/rot_params/y" unique_id=114683423]
+layout_mode = 2
+text = "123"
+max_length = 5
+select_all_on_focus = true
+
+[node name="z" type="HBoxContainer" parent="VBoxContainer/rot_params" unique_id=1410451599]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/rot_params/z" unique_id=1912698563]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.13725491, 0.54901963, 1, 1)
+text = "z"
+
+[node name="z_rot" type="LineEdit" parent="VBoxContainer/rot_params/z" unique_id=1316267378]
+layout_mode = 2
+text = "123"
+max_length = 5
+select_all_on_focus = true
+
+[node name="rotate_y" type="Button" parent="VBoxContainer" unique_id=1036165419]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_atl8a")
+theme_override_styles/pressed = ExtResource("5_ecfs6")
+theme_override_styles/hover = ExtResource("6_ub7cn")
+theme_override_styles/focus = ExtResource("7_t47jd")
+text = "повернуть на 90 по Y"
+
+[connection signal="editing_toggled" from="VBoxContainer/pos_params/x/x_pos" to="." method="_on_editing_toggled"]
+[connection signal="text_changed" from="VBoxContainer/pos_params/x/x_pos" to="." method="_on_x_pos_text_changed"]
+[connection signal="editing_toggled" from="VBoxContainer/pos_params/y/y_pos" to="." method="_on_editing_toggled"]
+[connection signal="text_changed" from="VBoxContainer/pos_params/y/y_pos" to="." method="_on_y_pos_text_changed"]
+[connection signal="editing_toggled" from="VBoxContainer/pos_params/z/z_pos" to="." method="_on_editing_toggled"]
+[connection signal="text_changed" from="VBoxContainer/pos_params/z/z_pos" to="." method="_on_z_pos_text_changed"]
+[connection signal="editing_toggled" from="VBoxContainer/rot_params/x/x_rot" to="." method="_on_editing_toggled"]
+[connection signal="text_changed" from="VBoxContainer/rot_params/x/x_rot" to="." method="_on_x_rot_text_changed"]
+[connection signal="editing_toggled" from="VBoxContainer/rot_params/y/y_rot" to="." method="_on_editing_toggled"]
+[connection signal="text_changed" from="VBoxContainer/rot_params/y/y_rot" to="." method="_on_y_rot_text_changed"]
+[connection signal="editing_toggled" from="VBoxContainer/rot_params/z/z_rot" to="." method="_on_editing_toggled"]
+[connection signal="text_changed" from="VBoxContainer/rot_params/z/z_rot" to="." method="_on_z_rot_text_changed"]
+[connection signal="pressed" from="VBoxContainer/rotate_y" to="." method="_on_rotate_y_pressed"]

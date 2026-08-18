@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bq3c3vb7up4se"]
+
+[ext_resource type="Theme" uid="uid://blclguf81pkdt" path="res://assets/menu/styles/font_theme.tres" id="1_1iy1k"]
+[ext_resource type="Script" uid="uid://c1wnp568o3oyt" path="res://assets/drones/drone_panel.gd" id="2_y5hw4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5de3"]
+bg_color = Color(0.21568628, 0.41960785, 0.63529414, 0.6784314)
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_detail = 20
+
+[node name="drone_panel" type="Panel" unique_id=1929759327]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -76.0
+offset_right = 229.0
+grow_vertical = 0
+theme = ExtResource("1_1iy1k")
+theme_override_styles/panel = SubResource("StyleBoxFlat_d5de3")
+script = ExtResource("2_y5hw4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=480668313]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -35.5
+offset_right = 191.0
+offset_bottom = 35.5
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1636601357]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1420990596]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1169233103]
+layout_mode = 2
+text = "Режим скорости:"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=435642662]
+layout_mode = 2
+text = "Стабилизация:"
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=753770928]
+layout_mode = 2
+text = "Фонарь:"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=688275832]
+layout_mode = 2
+
+[node name="speed_mode" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=133401837]
+unique_name_in_owner = true
+layout_mode = 2
+text = "3"
+
+[node name="stab" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=820790220]
+unique_name_in_owner = true
+layout_mode = 2
+text = "false"
+
+[node name="light" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=520714504]
+unique_name_in_owner = true
+layout_mode = 2
+text = "false"

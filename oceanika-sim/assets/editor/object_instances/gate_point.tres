@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EditorObject" format=3 uid="uid://b2p63se33hwix"]
+
+[ext_resource type="Script" uid="uid://dw8elnv88x0do" path="res://assets/editor/types/editor_object.gd" id="1_j4jwf"]
+[ext_resource type="PackedScene" uid="uid://b4uiunqk2ajl5" path="res://assets/gates/gate_point_editor.tscn" id="1_pu646"]
+[ext_resource type="PackedScene" uid="uid://by8ryyyb3ftjl" path="res://assets/gates/gate_point.tscn" id="2_htdax"]
+
+[resource]
+script = ExtResource("1_j4jwf")
+display_name = "Точка пути с воротами"
+editor_scene = ExtResource("1_pu646")
+race_scene = ExtResource("2_htdax")
+default_config = Dictionary[String, Variant]({
+"color": 4,
+"object_to_wait": 0,
+"score": 4
+})
+type_map = Dictionary[String, String]({
+"color": "color",
+"object_to_wait": "node_id",
+"score": "int"
+})
+metadata/_custom_type_script = "uid://dw8elnv88x0do"

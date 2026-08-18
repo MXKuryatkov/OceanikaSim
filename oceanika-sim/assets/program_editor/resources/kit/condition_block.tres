@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ConditionRes" format=3 uid="uid://cxuhhv2cbd7dn"]
+
+[ext_resource type="PackedScene" uid="uid://dyk3iey4pluv6" path="res://assets/program_editor/blocks/condition_block_preset.tscn" id="1_lnrs4"]
+[ext_resource type="Script" uid="uid://b3yt28a8178pu" path="res://assets/program_editor/condition_res.gd" id="2_h8okw"]
+
+[resource]
+script = ExtResource("2_h8okw")
+block_preset = ExtResource("1_lnrs4")
+block_name = "Условие"
+code_lines = Array[String](["if", "else"])
+param1_dict = Dictionary[String, String]({
+"Значение глубины": "drone.get_depth()",
+"Значение крена": "drone.get_roll()",
+"Значение курса": "drone.get_course()",
+"Значение тангажа": "drone.get_pitch()"
+})
+metadata/_custom_type_script = "uid://b3yt28a8178pu"

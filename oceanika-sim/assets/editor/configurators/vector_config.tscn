@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cke7cuf20ro4r"]
+
+[ext_resource type="Script" uid="uid://bb0tllejxtfqw" path="res://assets/editor/configurators/vector_config.gd" id="1_ucw8p"]
+
+[node name="VectorConfig" type="HBoxContainer" unique_id=1936094177]
+offset_right = 349.0
+offset_bottom = 31.0
+script = ExtResource("1_ucw8p")
+
+[node name="Label" type="Label" parent="." unique_id=305024027]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "test"
+
+[node name="X" type="SpinBox" parent="." unique_id=84222516]
+layout_mode = 2
+step = 0.1
+allow_greater = true
+allow_lesser = true
+custom_arrow_step = 0.1
+
+[node name="Y" type="SpinBox" parent="." unique_id=1498504778]
+layout_mode = 2
+step = 0.1
+allow_greater = true
+allow_lesser = true
+custom_arrow_step = 0.1
+
+[node name="Z" type="SpinBox" parent="." unique_id=1360115825]
+layout_mode = 2
+step = 0.1
+allow_greater = true
+allow_lesser = true
+custom_arrow_step = 0.1
+
+[connection signal="value_changed" from="X" to="." method="_on_x_value_changed"]
+[connection signal="value_changed" from="Y" to="." method="_on_y_value_changed"]
+[connection signal="value_changed" from="Z" to="." method="_on_z_value_changed"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BlockRes" format=3 uid="uid://dvs6i0qa6mcrv"]
+
+[ext_resource type="PackedScene" uid="uid://8m5qh0nsdmu4" path="res://assets/program_editor/blocks/program_block_preset.tscn" id="1_wcbup"]
+[ext_resource type="Script" uid="uid://qu0uk3awc846" path="res://assets/program_editor/block_res.gd" id="2_45rax"]
+
+[resource]
+script = ExtResource("2_45rax")
+has_type = false
+block_name = "Поворот налево (угол)"
+set_code_line = "bot::TurnLeft"
+metadata/_custom_type_script = "uid://qu0uk3awc846"

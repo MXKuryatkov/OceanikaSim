@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://yi3jqhkhs1y1"]
+
+[ext_resource type="Theme" uid="uid://blclguf81pkdt" path="res://assets/menu/styles/font_theme.tres" id="1_bcksm"]
+[ext_resource type="Script" uid="uid://dcripm225lpn2" path="res://assets/editor/transform/transorm_switcher.gd" id="2_sbcwm"]
+[ext_resource type="Texture2D" uid="uid://2f1uypcv2irg" path="res://assets/UI/transform_ui/position.png" id="3_bw2rd"]
+[ext_resource type="Texture2D" uid="uid://y3fce5w2kvfr" path="res://assets/UI/transform_ui/position_clicked.png" id="4_4cqq8"]
+[ext_resource type="Texture2D" uid="uid://be3qewg0uv5nq" path="res://assets/UI/transform_ui/rotation.png" id="5_6nc8w"]
+[ext_resource type="Texture2D" uid="uid://bj5m0xhkxcl46" path="res://assets/UI/transform_ui/rotation_clicked.png" id="6_b06bb"]
+
+[node name="TransormSwitcher" type="HBoxContainer" unique_id=587825291 groups=["transform_switcher"]]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.0
+offset_right = 27.0
+offset_bottom = 24.0
+grow_horizontal = 2
+theme = ExtResource("1_bcksm")
+script = ExtResource("2_sbcwm")
+
+[node name="position" type="TextureButton" parent="." unique_id=1261098423]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "перемещать"
+focus_mode = 0
+texture_normal = ExtResource("3_bw2rd")
+texture_pressed = ExtResource("4_4cqq8")
+texture_disabled = ExtResource("4_4cqq8")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="rotation" type="TextureButton" parent="." unique_id=63723172]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "вращать"
+focus_mode = 0
+texture_normal = ExtResource("5_6nc8w")
+texture_pressed = ExtResource("6_b06bb")
+texture_disabled = ExtResource("6_b06bb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="position" to="." method="_on_position_pressed"]
+[connection signal="pressed" from="rotation" to="." method="_on_rotation_pressed"]

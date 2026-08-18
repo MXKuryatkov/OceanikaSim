@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://kbwp8w5wvk6j"]
+
+[ext_resource type="Script" uid="uid://bugccsx6wacsp" path="res://assets/program_editor/drone_simulation/simulated_kit.gd" id="1_tgdr4"]
+[ext_resource type="PackedScene" uid="uid://c0fm6m84dxcnl" path="res://assets/drones/kit/mesh.scn" id="2_tjtqv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3tewv"]
+size = Vector3(0.13476563, 0.22094727, 0.0925293)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a6p3n"]
+size = Vector3(0.024414063, 0.22094727, 0.025390625)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ivlt0"]
+height = 0.045410156
+radius = 0.024902344
+
+[node name="SimulatedKit" type="CharacterBody3D" unique_id=492028835]
+collision_layer = 3
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_tgdr4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=857862808]
+transform = Transform3D(-1, 8.742278e-08, 4.371139e-08, -4.371139e-08, 1.9106855e-15, -1, -8.742278e-08, -1, 1.9106855e-15, 3.201519e-09, 0.03713642, -0.01453013)
+shape = SubResource("BoxShape3D_3tewv")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="." unique_id=830852101]
+transform = Transform3D(-1, 8.742278e-08, 4.371139e-08, -4.371139e-08, 1.9106855e-15, -1, -8.742278e-08, -1, 1.9106855e-15, -0.079230994, 0.0008975044, -0.01453013)
+shape = SubResource("BoxShape3D_a6p3n")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="." unique_id=1502157710]
+transform = Transform3D(-1, 8.742278e-08, 4.371139e-08, -4.371139e-08, 1.9106855e-15, -1, -8.742278e-08, -1, 1.9106855e-15, 0.079, 0.001, -0.014182549)
+shape = SubResource("BoxShape3D_a6p3n")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1482820798]
+transform = Transform3D(-1, 8.742278e-08, 4.371139e-08, -8.742278e-08, -1, 4.3711392e-08, 4.3711392e-08, 4.3711385e-08, 1, 0, 0, 0.15481746)
+shape = SubResource("CylinderShape3D_ivlt0")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=590211407]
+transform = Transform3D(-1, 8.742278e-08, 4.371139e-08, -8.742278e-08, -1, 4.3711392e-08, 4.3711392e-08, 4.3711385e-08, 1, 0.116200864, 0, -0.09412811)
+shape = SubResource("CylinderShape3D_ivlt0")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=135712441]
+transform = Transform3D(-1, 8.742278e-08, 4.371139e-08, -8.742278e-08, -1, 4.3711392e-08, 4.3711392e-08, 4.3711385e-08, 1, -0.116, 0, -0.09418255)
+shape = SubResource("CylinderShape3D_ivlt0")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=928919130]
+transform = Transform3D(-1, 8.742278e-08, 4.371139e-08, 4.3711392e-08, 8.742278e-08, 1, 8.742278e-08, 1, -8.742278e-08, -0.116, -0.0011817012, 0.071649864)
+shape = SubResource("CylinderShape3D_ivlt0")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=1542856858]
+transform = Transform3D(-1, 8.742278e-08, 4.371139e-08, 4.3711392e-08, 8.742278e-08, 1, 8.742278e-08, 1, -8.742278e-08, 0.116, -0.001, 0.07181745)
+shape = SubResource("CylinderShape3D_ivlt0")
+
+[node name="3DKIT" parent="." unique_id=1117850185 instance=ExtResource("2_tjtqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04767555, 0)
+
+[node name="lights" type="Node3D" parent="." unique_id=279406262]
+visible = false
+
+[node name="SpotLight3D" type="SpotLight3D" parent="lights" unique_id=1797264682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09697078, 0.06854673, -0.123242654)
+light_energy = 0.5
+spot_angle = 31.648073
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="lights" unique_id=850729255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.097, 0.069, -0.123)
+light_energy = 0.5
+spot_angle = 31.648073

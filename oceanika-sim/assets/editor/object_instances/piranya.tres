@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EditorObject" format=3 uid="uid://cu53saed3d8hl"]
+
+[ext_resource type="Script" uid="uid://dw8elnv88x0do" path="res://assets/editor/types/editor_object.gd" id="1_3de6p"]
+[ext_resource type="PackedScene" uid="uid://swi7001l5qgu" path="res://assets/drones/piranya/piranya.scn" id="1_dxm5u"]
+[ext_resource type="PackedScene" uid="uid://cv6dvkwv1jk4l" path="res://assets/drones/piranya/editor_piranya.tscn" id="1_gdw2a"]
+
+[resource]
+script = ExtResource("1_3de6p")
+display_name = "Пиранья"
+editor_scene = ExtResource("1_gdw2a")
+race_scene = ExtResource("1_dxm5u")
+metadata/_custom_type_script = "uid://dw8elnv88x0do"

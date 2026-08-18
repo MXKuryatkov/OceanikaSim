@@ -1,0 +1,403 @@
+[gd_scene format=3 uid="uid://c7a6oaxhnj0kg"]
+
+[ext_resource type="Theme" uid="uid://blclguf81pkdt" path="res://assets/menu/styles/font_theme.tres" id="1_tl52s"]
+[ext_resource type="Script" uid="uid://dmgn4hisbfk5p" path="res://assets/menu/races_menu/races_menu.gd" id="2_e06li"]
+[ext_resource type="StyleBox" uid="uid://b62jkqoxscsxf" path="res://assets/menu/styles/panel.tres" id="2_wsrwq"]
+[ext_resource type="StyleBox" uid="uid://dn63ei5iq8w4k" path="res://assets/menu/styles/button_normal.tres" id="3_e06li"]
+[ext_resource type="Script" uid="uid://c3hpngqlo7hkt" path="res://assets/races/Race.gd" id="3_l45td"]
+[ext_resource type="Resource" uid="uid://cdvamucjcqbtr" path="res://assets/races/races_res/Underwaterninja_newbie.tres" id="4_l45td"]
+[ext_resource type="StyleBox" uid="uid://mhlru8l4tr4d" path="res://assets/menu/styles/button_focus.tres" id="4_lp0m8"]
+[ext_resource type="Texture2D" uid="uid://bsukco7p6ui6j" path="res://assets/UI/search.png" id="5_x35fy"]
+[ext_resource type="StyleBox" uid="uid://cv4vwathhelm8" path="res://assets/menu/styles/subpanel.tres" id="6_6rb78"]
+[ext_resource type="Texture2D" uid="uid://x160at8ngrlu" path="res://assets/UI/arrow.png" id="8_u5rhv"]
+[ext_resource type="PackedScene" uid="uid://81y58tbrtvon" path="res://assets/logger/log.tscn" id="9_e06li"]
+[ext_resource type="StyleBox" uid="uid://cq6cuq5lvnus1" path="res://assets/menu/styles/button_pressed.tres" id="9_x35fy"]
+[ext_resource type="StyleBox" uid="uid://c0h7606hnkk6s" path="res://assets/menu/styles/button_hover.tres" id="10_6rb78"]
+[ext_resource type="FontFile" uid="uid://do8lwycl8ulgi" path="res://assets/UI/font/Montserrat/static/Montserrat-MediumItalic.ttf" id="11_6rb78"]
+[ext_resource type="PackedScene" uid="uid://bev3vrsqj7vr1" path="res://assets/menu/close_panel.tscn" id="12_5ihvx"]
+[ext_resource type="PackedScene" uid="uid://sjq2fodujlwm" path="res://assets/menu/exit_to_menu.tscn" id="12_6rb78"]
+[ext_resource type="Script" uid="uid://cj11p76gh4icv" path="res://assets/menu/races_menu/contorllers_panel.gd" id="12_atslp"]
+[ext_resource type="Script" uid="uid://d2w7l1iickvo7" path="res://assets/menu/races_menu/controller_detection.gd" id="12_ffn5o"]
+[ext_resource type="PackedScene" uid="uid://dvwtof634kkck" path="res://assets/menu/radio_connection.tscn" id="19_abpcd"]
+
+[node name="races_menu" type="Control" unique_id=1908814290]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_tl52s")
+script = ExtResource("2_e06li")
+races = Array[ExtResource("3_l45td")]([ExtResource("4_l45td")])
+
+[node name="race_choose_panel" type="Panel" parent="." unique_id=1734396500]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_top = -243.0
+offset_right = 390.0
+offset_bottom = 243.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_wsrwq")
+
+[node name="Label" type="Label" parent="race_choose_panel" unique_id=912901429]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.0
+offset_right = 115.0
+offset_bottom = 32.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_font_sizes/font_size = 25
+text = "Выберите трассу"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="race_choose_panel" unique_id=610107767]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -258.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/separation = 5
+
+[node name="search" type="LineEdit" parent="race_choose_panel/HBoxContainer" unique_id=361232427]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_selected_color = Color(0.36257365, 0.6398202, 0.9999848, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0.25882354, 0.53333336, 0.19215687)
+theme_override_colors/selection_color = Color(0.54509807, 0.7411765, 1, 0.4862745)
+theme_override_constants/minimum_character_width = 2
+theme_override_styles/normal = ExtResource("3_e06li")
+theme_override_styles/read_only = ExtResource("3_e06li")
+theme_override_styles/focus = ExtResource("4_lp0m8")
+placeholder_text = "Найти"
+select_all_on_focus = true
+right_icon = ExtResource("5_x35fy")
+icon_expand_mode = 2
+right_icon_scale = 0.59
+
+[node name="load" type="Button" parent="race_choose_panel/HBoxContainer" unique_id=498290538]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_styles/normal = ExtResource("3_e06li")
+theme_override_styles/pressed = ExtResource("9_x35fy")
+theme_override_styles/hover = ExtResource("10_6rb78")
+theme_override_styles/focus = ExtResource("4_lp0m8")
+text = "Загрузить"
+icon = ExtResource("8_u5rhv")
+icon_alignment = 2
+expand_icon = true
+
+[node name="Panel" type="Panel" parent="race_choose_panel" unique_id=2103911206]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -385.0
+offset_top = -201.0
+offset_right = 385.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("6_6rb78")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="race_choose_panel/Panel" unique_id=1949227469]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -209.0
+offset_right = 375.0
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="race_choose_panel/Panel/ScrollContainer" unique_id=1700847025]
+layout_mode = 2
+
+[node name="exit to menu" parent="race_choose_panel" unique_id=298768368 instance=ExtResource("12_6rb78")]
+layout_mode = 1
+offset_right = 141.0
+
+[node name="race_confirm_panel" type="Panel" parent="." unique_id=1714867015]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_top = -243.0
+offset_right = 390.0
+offset_bottom = 243.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_wsrwq")
+
+[node name="race_name" type="Label" parent="race_confirm_panel" unique_id=533309494]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.0
+offset_right = 115.0
+offset_bottom = 32.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_font_sizes/font_size = 25
+text = "Название трассы"
+
+[node name="Panel" type="Panel" parent="race_confirm_panel" unique_id=1202689044]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -385.0
+offset_top = -201.0
+offset_right = 385.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("6_6rb78")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="race_confirm_panel/Panel" unique_id=338746004]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -371.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="buttons_hint" type="TextureRect" parent="race_confirm_panel/Panel/VBoxContainer" unique_id=1744186555]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="race_confirm_panel/Panel/VBoxContainer" unique_id=1444759989]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_font_sizes/font_size = 12
+text = "1 - Изменение высоты
+2 - Вперед, назад, пов. направо,
+пов. влево
+3 - Изменение скорости
+4 - Стабилизация
+5 - Фонари"
+horizontal_alignment = 1
+
+[node name="start" type="Button" parent="race_confirm_panel/Panel" unique_id=620131785]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -102.5
+offset_top = -70.0
+offset_right = 102.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("3_e06li")
+theme_override_styles/pressed = ExtResource("9_x35fy")
+theme_override_styles/hover = ExtResource("10_6rb78")
+theme_override_styles/focus = ExtResource("4_lp0m8")
+text = "Играть"
+
+[node name="back" type="Button" parent="race_confirm_panel/Panel" unique_id=398080505]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -49.0
+offset_right = 121.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = ExtResource("3_e06li")
+theme_override_styles/pressed = ExtResource("9_x35fy")
+theme_override_styles/hover = ExtResource("10_6rb78")
+theme_override_styles/focus = ExtResource("4_lp0m8")
+text = "Назад"
+
+[node name="race_description" type="Label" parent="race_confirm_panel/Panel" unique_id=1386278491]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_right = 77.0
+offset_bottom = 21.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_fonts/font = ExtResource("11_6rb78")
+theme_override_font_sizes/font_size = 16
+text = "Описание трассы"
+
+[node name="race_icon" type="TextureRect" parent="race_confirm_panel/Panel" unique_id=1422808325]
+layout_mode = 1
+offset_left = 18.0
+offset_top = 21.0
+offset_right = 132.0
+offset_bottom = 135.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="controller_detection" type="Control" parent="race_confirm_panel/Panel" unique_id=1050120423]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -66.0
+offset_right = 258.0
+offset_bottom = 66.0
+grow_vertical = 2
+script = ExtResource("12_ffn5o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="race_confirm_panel/Panel/controller_detection" unique_id=892910132]
+layout_mode = 1
+offset_right = 246.0
+offset_bottom = 132.0
+alignment = 1
+
+[node name="Label" type="Label" parent="race_confirm_panel/Panel/controller_detection/VBoxContainer" unique_id=2064751073]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_font_sizes/font_size = 25
+text = "Настройка пульта:"
+
+[node name="controller_name" type="Label" parent="race_confirm_panel/Panel/controller_detection/VBoxContainer" unique_id=1659796842]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+horizontal_alignment = 1
+
+[node name="choose" type="Button" parent="race_confirm_panel/Panel/controller_detection/VBoxContainer" unique_id=1438792053]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_styles/normal = ExtResource("3_e06li")
+theme_override_styles/pressed = ExtResource("9_x35fy")
+theme_override_styles/hover = ExtResource("10_6rb78")
+theme_override_styles/focus = ExtResource("4_lp0m8")
+text = "Выбрать пульт"
+
+[node name="contorllers_panel" type="Panel" parent="race_confirm_panel/Panel" unique_id=1204248248]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.99997
+offset_top = -120.0
+offset_right = 157.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/panel = ExtResource("2_wsrwq")
+script = ExtResource("12_atslp")
+
+[node name="close_panel" parent="race_confirm_panel/Panel/contorllers_panel" unique_id=2008637292 instance=ExtResource("12_5ihvx")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -23.099976
+offset_right = 3.0517578e-05
+offset_bottom = 21.0
+grow_horizontal = 0
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="race_confirm_panel/Panel/contorllers_panel" unique_id=143609816]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -131.99997
+offset_right = 131.99997
+offset_bottom = 21.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+text = "Выберите пульт"
+horizontal_alignment = 1
+
+[node name="controllers_container" type="VBoxContainer" parent="race_confirm_panel/Panel/contorllers_panel" unique_id=878375938]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.096
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.040000916
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="exit to menu" parent="race_confirm_panel" unique_id=1855229240 instance=ExtResource("12_6rb78")]
+layout_mode = 0
+offset_right = 141.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1427208572]
+layer = 128
+
+[node name="Logger" parent="CanvasLayer" unique_id=1854780885 node_paths=PackedStringArray("auto_update_properties") instance=ExtResource("9_e06li")]
+auto_update_properties = {
+NodePath("../../race_confirm_panel/Panel/contorllers_panel"): "connected_controllers"
+}
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=858145597]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 2
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.ocs; OceanikaSim files")
+
+[node name="radio_connection" parent="." unique_id=86817177 instance=ExtResource("19_abpcd")]
+layout_mode = 0
+
+[connection signal="pressed" from="race_choose_panel/HBoxContainer/load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="race_confirm_panel/Panel/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="race_confirm_panel/Panel/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="race_confirm_panel/Panel/controller_detection/VBoxContainer/choose" to="race_confirm_panel/Panel/controller_detection" method="_on_choose_pressed"]
+[connection signal="hidden" from="race_confirm_panel/Panel/contorllers_panel" to="race_confirm_panel/Panel/contorllers_panel" method="_on_hidden"]
+[connection signal="visibility_changed" from="race_confirm_panel/Panel/contorllers_panel" to="race_confirm_panel/Panel/contorllers_panel" method="_on_visibility_changed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

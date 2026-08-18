@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b7gvulhdouag4"]
+
+[ext_resource type="Script" uid="uid://nfxh1akb1hse" path="res://assets/gates/colorful_body_editor.gd" id="1_cvir7"]
+[ext_resource type="ArrayMesh" uid="uid://bye1mxyvopwek" path="res://assets/gates/obj/gate2.obj" id="2_6x6mu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ubpq7"]
+size = Vector3(0.64959, 0.009489, 0.64959)
+
+[node name="Node3D" type="Node3D" unique_id=161449961 node_paths=PackedStringArray("target")]
+script = ExtResource("1_cvir7")
+target = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=719825664]
+transform = Transform3D(0.6611694, 0, 0, 0, -2.8900633e-08, -0.6611694, 0, 0.6611694, -2.8900633e-08, 0, 0, 0)
+mesh = ExtResource("2_6x6mu")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=857894520]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1713340635]
+transform = Transform3D(0.6611694, 0, 0, 0, -2.8900633e-08, -0.6611694, 0, 0.6611694, -2.8900633e-08, 0, -1.4957521e-10, 0.0034218822)
+shape = SubResource("BoxShape3D_ubpq7")

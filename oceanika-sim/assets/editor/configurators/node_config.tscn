@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dt086icrduu1d"]
+
+[ext_resource type="Script" uid="uid://bohea4tfpcxk7" path="res://assets/editor/configurators/node_config.gd" id="1_goojh"]
+
+[node name="NodeConfig" type="HBoxContainer" unique_id=864570502]
+offset_right = 277.0
+offset_bottom = 31.0
+script = ExtResource("1_goojh")
+
+[node name="Label" type="Label" parent="." unique_id=1068544378]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="." unique_id=681208114]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Выбрать"
+
+[node name="RemoveButton" type="Button" parent="." unique_id=787457729]
+layout_mode = 2
+text = "X"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="RemoveButton" to="." method="_on_remove_button_pressed"]

@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cmsl7nl3u2oi6"]
+
+[ext_resource type="Theme" uid="uid://blclguf81pkdt" path="res://assets/menu/styles/font_theme.tres" id="1_rwt1j"]
+[ext_resource type="Script" uid="uid://oylgw4ag234k" path="res://assets/editor/saver/top_panel.gd" id="2_3nava"]
+
+[node name="top_panel" type="HBoxContainer" unique_id=1498236664]
+theme = ExtResource("1_rwt1j")
+script = ExtResource("2_3nava")
+
+[node name="MenuBar" type="MenuBar" parent="." unique_id=1798407071]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme_override_constants/outline_size = 4
+flat = true
+
+[node name="PopupMenu" type="PopupMenu" parent="MenuBar" unique_id=227588009]
+oversampling_override = 1.0
+title = "Файл"
+size = Vector2i(131, 100)
+extend_to_title = true
+item_count = 3
+item_0/text = "Создать"
+item_0/id = 0
+item_1/text = "Загрузить"
+item_1/id = 1
+item_2/text = "Сохранить"
+item_2/id = 2
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=892149131]
+oversampling_override = 1.0
+initial_position = 2
+visible = true
+dialog_hide_on_ok = true
+dialog_close_on_escape = false
+access = 2
+filters = PackedStringArray("*.ocs; OceanikaSim files")
+
+[node name="file_name" type="Label" parent="." unique_id=820231407]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+text = "Новая миссия"
+horizontal_alignment = 1
+
+[connection signal="id_pressed" from="MenuBar/PopupMenu" to="." method="_on_popup_menu_id_pressed"]
+[connection signal="close_requested" from="FileDialog" to="." method="_on_file_dialog_close_requested"]
+[connection signal="confirmed" from="FileDialog" to="." method="_on_file_dialog_confirmed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

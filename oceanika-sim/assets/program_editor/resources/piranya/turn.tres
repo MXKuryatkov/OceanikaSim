@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BlockRes" format=3 uid="uid://wepit8kvc7aq"]
+
+[ext_resource type="PackedScene" uid="uid://8m5qh0nsdmu4" path="res://assets/program_editor/blocks/program_block_preset.tscn" id="1_w7uxx"]
+[ext_resource type="Script" uid="uid://qu0uk3awc846" path="res://assets/program_editor/block_res.gd" id="2_noxqm"]
+
+[resource]
+script = ExtResource("2_noxqm")
+has_type = false
+block_name = "Поворот (угол)"
+set_code_line = "bot::Turn"
+metadata/_custom_type_script = "uid://qu0uk3awc846"

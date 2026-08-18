@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ckhvxp8pw4yku"]
+
+[ext_resource type="PackedScene" uid="uid://cxd0dds1w1gvb" path="res://assets/editor/transform/position_arrows.tscn" id="1_f2css"]
+[ext_resource type="Script" uid="uid://d1chbgdgxifvg" path="res://object_transfrom_testing/test_object.gd" id="1_kkv8x"]
+[ext_resource type="PackedScene" uid="uid://81y58tbrtvon" path="res://assets/logger/log.tscn" id="2_sdkqr"]
+[ext_resource type="PackedScene" uid="uid://cuofhtvo6bsxa" path="res://assets/editor/transform/rotation_circles.tscn" id="3_eo8v8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cyagk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kkv8x"]
+
+[node name="test_object" type="StaticBody3D" unique_id=2104023879]
+script = ExtResource("1_kkv8x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2017774685]
+mesh = SubResource("BoxMesh_cyagk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1829124075]
+shape = SubResource("BoxShape3D_kkv8x")
+
+[node name="position_arrows" parent="." unique_id=1127585068 instance=ExtResource("1_f2css")]
+
+[node name="rotation_circles" parent="." unique_id=149374188 instance=ExtResource("3_eo8v8")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=800124179]
+
+[node name="Logger" parent="CanvasLayer" unique_id=1854780885 node_paths=PackedStringArray("auto_update_properties") instance=ExtResource("2_sdkqr")]
+auto_update_properties = {
+null: "current_axis"
+}

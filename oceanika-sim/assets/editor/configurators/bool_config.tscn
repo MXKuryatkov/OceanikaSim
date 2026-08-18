@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b50w2mllo2sbw"]
+
+[ext_resource type="Script" uid="uid://b5jmsthrvehki" path="res://assets/editor/configurators/bool_config.gd" id="1_r4xq5"]
+
+[node name="BoolConfig" type="HBoxContainer" unique_id=1390872926]
+offset_right = 261.0
+offset_bottom = 31.0
+script = ExtResource("1_r4xq5")
+
+[node name="Label" type="Label" parent="." unique_id=1384213289]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Test"
+
+[node name="CheckBox" type="CheckBox" parent="." unique_id=392168201]
+layout_mode = 2
+text = "On"
+
+[connection signal="pressed" from="CheckBox" to="." method="_on_check_box_pressed"]

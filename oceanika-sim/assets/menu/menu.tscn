@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://c5g7klqfs70lr"]
+
+[ext_resource type="StyleBox" uid="uid://b62jkqoxscsxf" path="res://assets/menu/styles/panel.tres" id="1_gnb8q"]
+[ext_resource type="Theme" uid="uid://blclguf81pkdt" path="res://assets/menu/styles/font_theme.tres" id="1_ndlle"]
+[ext_resource type="Script" uid="uid://dd26oxkol8bws" path="res://assets/menu/menu.gd" id="2_875uc"]
+[ext_resource type="Texture2D" uid="uid://dbbdf40gju4wj" path="res://assets/UI/oceanika_logo_ru.png" id="2_jf5vr"]
+[ext_resource type="PackedScene" uid="uid://c7a6oaxhnj0kg" path="res://assets/menu/races_menu/races_menu.tscn" id="3_jxjdv"]
+[ext_resource type="FontFile" uid="uid://461du7fgtvjc" path="res://assets/UI/font/Montserrat/static/Montserrat-SemiBoldItalic.ttf" id="4_bevbk"]
+[ext_resource type="PackedScene" uid="uid://c6xjn0gcuxu5h" path="res://assets/editor/RaceEditor.tscn" id="4_e2fpe"]
+[ext_resource type="StyleBox" uid="uid://dn63ei5iq8w4k" path="res://assets/menu/styles/button_normal.tres" id="5_jxyy0"]
+[ext_resource type="PackedScene" uid="uid://7s1jgx0vcx8i" path="res://assets/program_editor/drone_simulation/DroneSimulation.tscn" id="5_qt2t5"]
+[ext_resource type="StyleBox" uid="uid://cq6cuq5lvnus1" path="res://assets/menu/styles/button_pressed.tres" id="6_jxyy0"]
+[ext_resource type="StyleBox" uid="uid://c0h7606hnkk6s" path="res://assets/menu/styles/button_hover.tres" id="7_r3hxg"]
+[ext_resource type="StyleBox" uid="uid://mhlru8l4tr4d" path="res://assets/menu/styles/button_focus.tres" id="8_44dqb"]
+[ext_resource type="Texture2D" uid="uid://0mea7oti5caf" path="res://assets/UI/close.png" id="11_4arus"]
+[ext_resource type="PackedScene" uid="uid://dvwtof634kkck" path="res://assets/menu/radio_connection.tscn" id="14_8ey5a"]
+
+[node name="menu" type="Control" unique_id=51287012]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ndlle")
+script = ExtResource("2_875uc")
+races_menu = ExtResource("3_jxjdv")
+maps_making = ExtResource("4_e2fpe")
+programming = ExtResource("5_qt2t5")
+
+[node name="Panel" type="Panel" parent="." unique_id=445931920]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -128.0
+offset_right = 186.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_gnb8q")
+
+[node name="OceanikaLogoRu" type="TextureRect" parent="Panel" unique_id=1689366994]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -140.0
+offset_right = 140.0
+offset_bottom = 87.0
+grow_horizontal = 2
+texture = ExtResource("2_jf5vr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1777397115]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -198.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1920230375]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_font_sizes/font_size = 21
+text = "Добро пожаловать"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer" unique_id=935266967]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_fonts/font = ExtResource("4_bevbk")
+theme_override_font_sizes/font_size = 16
+text = "Выберите режим:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="races" type="Button" parent="Panel/VBoxContainer" unique_id=562036413]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_styles/normal = ExtResource("5_jxyy0")
+theme_override_styles/pressed = ExtResource("6_jxyy0")
+theme_override_styles/hover = ExtResource("7_r3hxg")
+theme_override_styles/focus = ExtResource("8_44dqb")
+text = "Управление"
+
+[node name="maps_making" type="Button" parent="Panel/VBoxContainer" unique_id=1109378006]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_styles/normal = ExtResource("5_jxyy0")
+theme_override_styles/pressed = ExtResource("6_jxyy0")
+theme_override_styles/hover = ExtResource("7_r3hxg")
+theme_override_styles/focus = ExtResource("8_44dqb")
+text = "Редактор миссий"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=496322828]
+layout_mode = 2
+
+[node name="programming" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1446179985]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_styles/normal = ExtResource("5_jxyy0")
+theme_override_styles/pressed = ExtResource("6_jxyy0")
+theme_override_styles/hover = ExtResource("7_r3hxg")
+theme_override_styles/focus = ExtResource("8_44dqb")
+text = "Программирование"
+
+[node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1331926426]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_styles/normal = ExtResource("5_jxyy0")
+theme_override_styles/pressed = ExtResource("6_jxyy0")
+theme_override_styles/hover = ExtResource("7_r3hxg")
+theme_override_styles/focus = ExtResource("8_44dqb")
+selected = 0
+item_count = 2
+popup/item_0/text = "КИТ"
+popup/item_0/id = 0
+popup/item_1/text = "Пиранья"
+popup/item_1/id = 1
+
+[node name="madeby" type="Label" parent="." unique_id=1522086729]
+layout_mode = 0
+offset_right = 209.0
+offset_bottom = 11.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.1254902)
+theme_override_font_sizes/font_size = 6
+text = "made by Kuryatkov Maxim and Artamonov Andrey"
+metadata/_edit_lock_ = true
+
+[node name="close" type="TextureButton" parent="." unique_id=2008637292]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -31.0
+offset_bottom = 31.0
+grow_horizontal = 0
+texture_normal = ExtResource("11_4arus")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="radio_connection" parent="." unique_id=86817177 instance=ExtResource("14_8ey5a")]
+layout_mode = 0
+
+[node name="about_authors" type="Button" parent="." unique_id=1329295244]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -29.0
+offset_right = 167.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_styles/normal = ExtResource("5_jxyy0")
+theme_override_styles/pressed = ExtResource("6_jxyy0")
+theme_override_styles/hover = ExtResource("7_r3hxg")
+theme_override_styles/focus = ExtResource("8_44dqb")
+text = "Разработчики: Курятков Максим, Артамонов Андрей, \"Океаника\""
+
+[connection signal="pressed" from="Panel/VBoxContainer/races" to="." method="_on_races_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/maps_making" to="." method="_on_maps_making_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/programming" to="." method="_on_programming_pressed"]
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="about_authors" to="." method="_on_about_authors_pressed"]

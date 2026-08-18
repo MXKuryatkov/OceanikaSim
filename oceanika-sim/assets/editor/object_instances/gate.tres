@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EditorObject" format=3 uid="uid://pxgolrgq077t"]
+
+[ext_resource type="Script" uid="uid://dw8elnv88x0do" path="res://assets/editor/types/editor_object.gd" id="1_r72kx"]
+[ext_resource type="PackedScene" uid="uid://b7gvulhdouag4" path="res://assets/gates/editor_gate.tscn" id="1_sgh52"]
+[ext_resource type="PackedScene" uid="uid://ceah2d2n4ug5n" path="res://assets/gates/gate.tscn" id="2_6uwlu"]
+
+[resource]
+script = ExtResource("1_r72kx")
+display_name = "Ворота"
+editor_scene = ExtResource("1_sgh52")
+race_scene = ExtResource("2_6uwlu")
+default_config = Dictionary[String, Variant]({
+"color": 4
+})
+type_map = Dictionary[String, String]({
+"color": "color"
+})
+metadata/_custom_type_script = "uid://dw8elnv88x0do"

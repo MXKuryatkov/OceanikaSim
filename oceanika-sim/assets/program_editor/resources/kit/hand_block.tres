@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BlockRes" format=3 uid="uid://35vhxwl5fq0u"]
+
+[ext_resource type="PackedScene" uid="uid://8m5qh0nsdmu4" path="res://assets/program_editor/blocks/program_block_preset.tscn" id="1_ye4pt"]
+[ext_resource type="Script" uid="uid://qu0uk3awc846" path="res://assets/program_editor/block_res.gd" id="2_wjfs3"]
+
+[resource]
+script = ExtResource("2_wjfs3")
+has_type = false
+block_name = "Манипулятор"
+set_code_line = "drone.set_hand"
+max_value = 1
+metadata/_custom_type_script = "uid://qu0uk3awc846"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BlockRes" format=3 uid="uid://dmabp23c08ugn"]
+
+[ext_resource type="PackedScene" uid="uid://8m5qh0nsdmu4" path="res://assets/program_editor/blocks/program_block_preset.tscn" id="1_27qb7"]
+[ext_resource type="Script" uid="uid://qu0uk3awc846" path="res://assets/program_editor/block_res.gd" id="2_rgr4c"]
+
+[resource]
+script = ExtResource("2_rgr4c")
+has_type = false
+block_name = "Вперед (время)"
+set_code_line = "move::Forward"
+metadata/_custom_type_script = "uid://qu0uk3awc846"

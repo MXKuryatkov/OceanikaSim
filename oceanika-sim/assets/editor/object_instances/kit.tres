@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EditorObject" format=3 uid="uid://bvjcrkcgkqu5o"]
+
+[ext_resource type="PackedScene" uid="uid://bskfuo73auoaw" path="res://assets/drones/kit/kit.scn" id="1_ag02w"]
+[ext_resource type="Script" uid="uid://dw8elnv88x0do" path="res://assets/editor/types/editor_object.gd" id="1_nftww"]
+[ext_resource type="PackedScene" uid="uid://cm3506q27nfny" path="res://assets/drones/kit/editor_kit.tscn" id="1_vajid"]
+
+[resource]
+script = ExtResource("1_nftww")
+display_name = "Кит"
+editor_scene = ExtResource("1_vajid")
+race_scene = ExtResource("1_ag02w")
+metadata/_custom_type_script = "uid://dw8elnv88x0do"

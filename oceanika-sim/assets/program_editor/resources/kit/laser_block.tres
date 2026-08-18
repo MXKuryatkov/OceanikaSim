@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BlockRes" format=3 uid="uid://cqe8hu85t2ach"]
+
+[ext_resource type="PackedScene" uid="uid://8m5qh0nsdmu4" path="res://assets/program_editor/blocks/program_block_preset.tscn" id="1_7sdu7"]
+[ext_resource type="Script" uid="uid://qu0uk3awc846" path="res://assets/program_editor/block_res.gd" id="2_r2ijp"]
+
+[resource]
+script = ExtResource("2_r2ijp")
+has_type = false
+block_name = "Лазер"
+set_code_line = "drone.set_laser"
+max_value = 1
+metadata/_custom_type_script = "uid://qu0uk3awc846"

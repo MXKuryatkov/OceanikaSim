@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cm3506q27nfny"]
+
+[ext_resource type="Script" uid="uid://0ujw0a6b3clg" path="res://assets/editor/types/editor_scene.gd" id="1_mnckm"]
+[ext_resource type="PackedScene" uid="uid://c0fm6m84dxcnl" path="res://assets/drones/kit/mesh.scn" id="2_77p3f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_77p3f"]
+size = Vector3(0.2775879, 0.10900879, 0.31884766)
+
+[node name="EditorKit" type="Node3D" unique_id=1592842260]
+script = ExtResource("1_mnckm")
+
+[node name="3DKIT" parent="." unique_id=1117850185 instance=ExtResource("2_77p3f")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2048905509]
+collision_layer = 2
+collision_mask = 0
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=546705631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.030456543, 0.016357422)
+shape = SubResource("BoxShape3D_77p3f")

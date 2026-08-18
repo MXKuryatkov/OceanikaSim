@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://d16an0a2nrr2j"]
+
+[ext_resource type="Script" uid="uid://iac4xp6a8rmv" path="res://assets/editor/way_editor/way_editor.gd" id="1_j1gjd"]
+[ext_resource type="StyleBox" uid="uid://dn63ei5iq8w4k" path="res://assets/menu/styles/button_normal.tres" id="2_a5jki"]
+[ext_resource type="StyleBox" uid="uid://cq6cuq5lvnus1" path="res://assets/menu/styles/button_pressed.tres" id="3_j1gjd"]
+[ext_resource type="StyleBox" uid="uid://c0h7606hnkk6s" path="res://assets/menu/styles/button_hover.tres" id="4_26mxs"]
+[ext_resource type="StyleBox" uid="uid://mhlru8l4tr4d" path="res://assets/menu/styles/button_focus.tres" id="5_idh52"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukrt7"]
+bg_color = Color(0.21568628, 0.41960785, 0.63529414, 0.6784314)
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4tvc"]
+bg_color = Color(0.21568628, 0.41960785, 0.63529414, 0.6784314)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0oo23"]
+bg_color = Color(0.21568628, 0.5254902, 0.63529414, 0.44705883)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5jki"]
+bg_color = Color(1, 1, 1, 1)
+corner_detail = 20
+
+[node name="way_editor" type="Control" unique_id=471071177]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j1gjd")
+
+[node name="way_editor" type="GraphEdit" parent="." unique_id=1483791679]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ukrt7")
+theme_override_styles/panel_focus = SubResource("StyleBoxFlat_t4tvc")
+theme_override_styles/menu_panel = SubResource("StyleBoxFlat_0oo23")
+scroll_offset = Vector2(-20, 0)
+grid_pattern = 1
+right_disconnects = true
+minimap_size = Vector2(93.93994, 147.15503)
+minimap_opacity = 0.4
+show_zoom_buttons = false
+
+[node name="Panel" type="Panel" parent="." unique_id=40526375]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a5jki")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1882250908]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -14.0
+offset_right = 222.0
+offset_bottom = 14.0
+grow_vertical = 2
+
+[node name="add_point" type="Button" parent="Panel/HBoxContainer" unique_id=88421796]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = ExtResource("2_a5jki")
+theme_override_styles/pressed = ExtResource("3_j1gjd")
+theme_override_styles/hover = ExtResource("4_26mxs")
+theme_override_styles/focus = ExtResource("5_idh52")
+text = "+ добавить точку"
+
+[connection signal="connection_request" from="way_editor" to="." method="_on_way_editor_connection_request"]
+[connection signal="disconnection_request" from="way_editor" to="." method="_on_way_editor_disconnection_request"]
+[connection signal="pressed" from="Panel/HBoxContainer/add_point" to="." method="_on_add_point_pressed"]

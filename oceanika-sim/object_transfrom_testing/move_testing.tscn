@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bryraqpjtu85e"]
+
+[ext_resource type="Script" uid="uid://c2eva7ccon7o4" path="res://object_transfrom_testing/move_testing.gd" id="1_057ay"]
+[ext_resource type="PackedScene" uid="uid://cxd0dds1w1gvb" path="res://assets/editor/transform/position_arrows.tscn" id="2_21vv0"]
+[ext_resource type="Script" uid="uid://d1chbgdgxifvg" path="res://object_transfrom_testing/test_object.gd" id="3_etwev"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cyagk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kkv8x"]
+
+[node name="MoveTesting" type="Node3D" unique_id=313753910]
+script = ExtResource("1_057ay")
+
+[node name="position_arrows" parent="." unique_id=1127585068 instance=ExtResource("2_21vv0")]
+
+[node name="test_object" type="StaticBody3D" parent="." unique_id=2104023879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4305086, 4.7683716e-07, -0.023192644)
+script = ExtResource("3_etwev")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="test_object" unique_id=2017774685]
+mesh = SubResource("BoxMesh_cyagk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test_object" unique_id=1829124075]
+shape = SubResource("BoxShape3D_kkv8x")
+
+[node name="test_object2" type="StaticBody3D" parent="." unique_id=130858457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.985342, 4.7683716e-07, -0.33688807)
+script = ExtResource("3_etwev")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="test_object2" unique_id=894576661]
+mesh = SubResource("BoxMesh_cyagk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test_object2" unique_id=2101244431]
+shape = SubResource("BoxShape3D_kkv8x")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1267207782]
+transform = Transform3D(1, 0, 0, 0, 0.68072087, 0.7325429, 0, -0.7325429, 0.68072087, 0.083070755, 1.9213829, 1.940598)

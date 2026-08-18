@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://bnsucf3o4n4um"]
+
+[ext_resource type="Texture2D" uid="uid://b62m0abyabrv6" path="res://icon.svg" id="1_1npoh"]
+[ext_resource type="Theme" uid="uid://blclguf81pkdt" path="res://assets/menu/styles/font_theme.tres" id="1_8olw7"]
+[ext_resource type="Script" uid="uid://dj77k5utawjt4" path="res://assets/menu/races_menu/race_card.gd" id="2_muv7x"]
+[ext_resource type="FontFile" uid="uid://do8lwycl8ulgi" path="res://assets/UI/font/Montserrat/static/Montserrat-MediumItalic.ttf" id="3_udm8o"]
+[ext_resource type="Shader" uid="uid://cfyte1nc2bd3l" path="res://assets/menu/races_menu/medal.gdshader" id="5_ldgvf"]
+[ext_resource type="Texture2D" uid="uid://fs8fs128ykti" path="res://assets/UI/medals/medal.png" id="5_slfmr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yijb4"]
+shader = ExtResource("5_ldgvf")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/line_width = 0.1999999955296
+shader_parameter/angle = 0.7853982
+shader_parameter/speed = 2.0000000298024
+shader_parameter/wait_cycles = 4.0000000596048
+
+[node name="race_card" type="HBoxContainer" unique_id=1331888725]
+offset_right = 292.0
+offset_bottom = 57.0
+theme = ExtResource("1_8olw7")
+script = ExtResource("2_muv7x")
+
+[node name="icon" type="TextureRect" parent="." unique_id=348673560]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_1npoh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1397975543]
+layout_mode = 2
+
+[node name="race_name" type="Label" parent="VBoxContainer" unique_id=710129157]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_font_sizes/font_size = 25
+text = "Название трассы"
+
+[node name="description" type="Label" parent="VBoxContainer" unique_id=1825492266]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_fonts/font = ExtResource("3_udm8o")
+theme_override_font_sizes/font_size = 16
+text = "Описание трассы"
+max_lines_visible = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=190110378]
+layout_mode = 2
+
+[node name="medals_container" type="VBoxContainer" parent="HBoxContainer" unique_id=1290463295]
+layout_mode = 2
+
+[node name="1" type="TextureRect" parent="HBoxContainer/medals_container" unique_id=1066444342]
+unique_name_in_owner = true
+modulate = Color(0.918, 0.769, 0.304, 1)
+self_modulate = Color(0.47397572, 0.47397578, 0.4739756, 0.46666667)
+texture_filter = 4
+material = SubResource("ShaderMaterial_yijb4")
+use_parent_material = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_slfmr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="2" type="TextureRect" parent="HBoxContainer/medals_container" unique_id=1318650294]
+unique_name_in_owner = true
+modulate = Color(0.753, 0.753, 0.753, 1)
+self_modulate = Color(0.47397572, 0.47397578, 0.4739756, 0.46666667)
+texture_filter = 4
+material = SubResource("ShaderMaterial_yijb4")
+use_parent_material = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_slfmr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="3" type="TextureRect" parent="HBoxContainer/medals_container" unique_id=589954129]
+unique_name_in_owner = true
+modulate = Color(0.8745098, 0.6313726, 0.4862745, 1)
+self_modulate = Color(0.47397572, 0.47397578, 0.4739756, 0.46666667)
+texture_filter = 4
+material = SubResource("ShaderMaterial_yijb4")
+use_parent_material = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_slfmr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer" unique_id=74146013]
+layout_mode = 2
+theme_override_constants/separation = 23
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer3" unique_id=429189599]
+layout_mode = 2
+text = "< 60 сек."
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer3" unique_id=2023512644]
+layout_mode = 2
+text = "60-90 сек."
+
+[node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer3" unique_id=2070689549]
+layout_mode = 2
+text = "> 90 сек."
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

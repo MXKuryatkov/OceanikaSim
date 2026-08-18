@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bev3vrsqj7vr1"]
+
+[ext_resource type="Script" uid="uid://c3pj1dh2uctn8" path="res://assets/menu/close_panel.gd" id="2_udfku"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p5cxu"]
+load_path = "res://.godot/imported/close.png-3b5eddcb1952645b48d17f00ca7e035e.ctex"
+
+[node name="close_panel" type="TextureButton" unique_id=2008637292]
+offset_right = 13.0
+offset_bottom = 13.0
+texture_normal = SubResource("CompressedTexture2D_p5cxu")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_udfku")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

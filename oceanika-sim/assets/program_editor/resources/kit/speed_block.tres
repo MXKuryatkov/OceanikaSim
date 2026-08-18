@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BlockRes" format=3 uid="uid://jmkp6shmfl8"]
+
+[ext_resource type="PackedScene" uid="uid://8m5qh0nsdmu4" path="res://assets/program_editor/blocks/program_block_preset.tscn" id="1_5rnw1"]
+[ext_resource type="Script" uid="uid://qu0uk3awc846" path="res://assets/program_editor/block_res.gd" id="1_psvan"]
+
+[resource]
+script = ExtResource("1_psvan")
+block_name = "Скорость"
+set_code_line = "drone.set_speed"
+change_code_line = "drone.change_speed"
+max_value = 100
+metadata/_custom_type_script = "uid://qu0uk3awc846"

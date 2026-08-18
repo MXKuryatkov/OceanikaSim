@@ -1,0 +1,2 @@
+extends BlockRes
+class_name BlockWithoutValueRes

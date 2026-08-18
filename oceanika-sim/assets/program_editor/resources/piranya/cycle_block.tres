@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CycleRes" format=3 uid="uid://chh3ahxajw6r4"]
+
+[ext_resource type="PackedScene" uid="uid://b5gco6jq57xyd" path="res://assets/program_editor/blocks/cycle_block_preset.tscn" id="1_ctjlp"]
+[ext_resource type="Script" uid="uid://dg2qsjnuxccv8" path="res://assets/program_editor/cycle_res.gd" id="2_enhgb"]
+
+[resource]
+script = ExtResource("2_enhgb")
+block_preset = ExtResource("1_ctjlp")
+block_name = "Цикл"
+code_lines = Array[String](["for (int i = 0;", "while (True)"])

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Race" format=3 uid="uid://cdvamucjcqbtr"]
+
+[ext_resource type="Texture2D" uid="uid://dpbne3nq445i" path="res://assets/races/races_icons/swimming-pool.png" id="1_jtmjb"]
+[ext_resource type="Script" uid="uid://c3hpngqlo7hkt" path="res://assets/races/Race.gd" id="2_e7hyr"]
+
+[resource]
+script = ExtResource("2_e7hyr")
+name = "Подводный ниндзя (начинающий)"
+description = "Трасса для летнего лагеря"
+icon = ExtResource("1_jtmjb")
+race_file_path = "res://assets/races/ocs files/Подводный ниндзя (начинающий).ocs"
+metadata/_custom_type_script = "uid://c3hpngqlo7hkt"

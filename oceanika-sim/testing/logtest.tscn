@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://6i8dkmbgotqf"]
+
+[ext_resource type="Script" uid="uid://dw6u1bjr5jkxl" path="res://testing/logtest.gd" id="1_1blr2"]
+[ext_resource type="PackedScene" uid="uid://81y58tbrtvon" path="res://assets/logger/log.tscn" id="2_vyng5"]
+[ext_resource type="Script" uid="uid://c5xb4bk6xsupy" path="res://addons/stopwatch/Stopwatch.gd" id="3_t14yh"]
+
+[node name="Logger" type="Control" unique_id=2118236470]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1blr2")
+
+[node name="Label" type="Label" parent="." unique_id=795589485]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "hi!"
+
+[node name="Button" type="Button" parent="." unique_id=379983979]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 348.0
+offset_right = 734.0
+offset_bottom = 474.0
+text = "try clicking me"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=961748207]
+
+[node name="Logger" parent="CanvasLayer" unique_id=954319598 node_paths=PackedStringArray("auto_update_properties", "auto_update_root") instance=ExtResource("2_vyng5")]
+auto_update_properties = {
+NodePath("../../Stopwatch"): "elapsed_time",
+NodePath("../../Button"): "button_pressed"
+}
+auto_update_root = NodePath("../..")
+
+[node name="Stopwatch" type="Node" parent="." unique_id=1894349477]
+script = ExtResource("3_t14yh")
+autostart = true
+metadata/_custom_type_script = "uid://c5xb4bk6xsupy"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

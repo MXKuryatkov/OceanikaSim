@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BlockRes" format=3 uid="uid://ddbqahlxailaa"]
+
+[ext_resource type="PackedScene" uid="uid://8m5qh0nsdmu4" path="res://assets/program_editor/blocks/program_block_preset.tscn" id="1_rl4h6"]
+[ext_resource type="Script" uid="uid://qu0uk3awc846" path="res://assets/program_editor/block_res.gd" id="2_bu26m"]
+
+[resource]
+script = ExtResource("2_bu26m")
+has_type = false
+block_name = "Ждать"
+set_code_line = "Wait"
+metadata/_custom_type_script = "uid://qu0uk3awc846"

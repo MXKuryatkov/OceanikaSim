@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://s4b2bhhh285d"]
+
+[ext_resource type="Script" uid="uid://dwmo07maembvl" path="res://assets/editor/camera.gd" id="1_pqn6m"]
+[ext_resource type="Texture2D" uid="uid://b62m0abyabrv6" path="res://icon.svg" id="2_0mjs6"]
+[ext_resource type="PackedScene" uid="uid://yi3jqhkhs1y1" path="res://assets/editor/transform/transorm_switcher.tscn" id="3_f2job"]
+[ext_resource type="PackedScene" uid="uid://bibxkqo5a2k4x" path="res://assets/editor/transform/transform_panel.tscn" id="6_ic7ei"]
+[ext_resource type="Script" uid="uid://d8iu5konwdiu" path="res://assets/editor/saver/mission_saver.gd" id="11_7hot5"]
+[ext_resource type="PackedScene" uid="uid://cmsl7nl3u2oi6" path="res://assets/editor/saver/top_panel.tscn" id="12_rx2ba"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pqn6m"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_0mjs6"]
+sky_material = SubResource("ProceduralSkyMaterial_pqn6m")
+
+[sub_resource type="Environment" id="Environment_irq0g"]
+background_mode = 2
+sky = SubResource("Sky_0mjs6")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_irq0g"]
+albedo_texture = ExtResource("2_0mjs6")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_x5rsy"]
+size = Vector2(100, 100)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_irq0g"]
+data = PackedVector3Array(50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50)
+
+[node name="test" type="Node3D" unique_id=393937781]
+
+[node name="mission_saver" type="Node" parent="." unique_id=150246629 node_paths=PackedStringArray("main_node")]
+script = ExtResource("11_7hot5")
+main_node = NodePath("../Objects")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1305868015]
+environment = SubResource("Environment_irq0g")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1272351211]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1109674595]
+material_override = SubResource("StandardMaterial3D_irq0g")
+mesh = SubResource("PlaneMesh_x5rsy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1030615319]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1847856936]
+shape = SubResource("ConcavePolygonShape3D_irq0g")
+
+[node name="Objects" type="Node3D" parent="." unique_id=667206753]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1507783075]
+
+[node name="TransormSwitcher" parent="UI" unique_id=587825291 instance=ExtResource("3_f2job")]
+
+[node name="transform_panel" parent="UI" unique_id=378687664 instance=ExtResource("6_ic7ei")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -305.0
+offset_top = -134.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="top_panel" parent="UI" unique_id=1498236664 node_paths=PackedStringArray("mission_saver") instance=ExtResource("12_rx2ba")]
+offset_right = 55.0
+offset_bottom = 29.0
+mission_saver = NodePath("../../mission_saver")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=316256041 node_paths=PackedStringArray("transform_panel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5130043, 1.5356743, 4.4400444)
+script = ExtResource("1_pqn6m")
+transform_panel = NodePath("../UI/transform_panel")

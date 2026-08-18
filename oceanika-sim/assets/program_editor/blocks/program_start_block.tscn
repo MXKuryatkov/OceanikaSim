@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://4g0ga340yl24"]
+
+[ext_resource type="Script" uid="uid://dl5005po3tfb0" path="res://assets/program_editor/blocks/program_start_block.gd" id="1_slye0"]
+
+[node name="program_start_block" type="GraphNode" unique_id=1545929935]
+offset_right = 180.0
+offset_bottom = 55.0
+title = "Старт"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_slye0")
+spawner = false
+
+[node name="GraphElement" type="GraphElement" parent="." unique_id=811991213]
+layout_mode = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

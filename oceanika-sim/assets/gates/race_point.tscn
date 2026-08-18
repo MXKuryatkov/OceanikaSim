@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://n6ck0q84mt2"]
+
+[ext_resource type="Script" uid="uid://bqx02jame0u5g" path="res://assets/gates/race_point.gd" id="1_uiqf6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uiqf6"]
+size = Vector3(0.01, 0.4, 0.4)
+
+[sub_resource type="Gradient" id="Gradient_s5qp1"]
+offsets = PackedFloat32Array(0.25714287, 0.30612245, 0.46938777, 0.5, 0.56734693)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jbakk"]
+gradient = SubResource("Gradient_s5qp1")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_uiqf6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:pixel_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.002]
+}
+
+[sub_resource type="Animation" id="Animation_jbakk"]
+resource_name = "zoomin"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:pixel_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.002, 0.003]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2os2p"]
+_data = {
+&"RESET": SubResource("Animation_uiqf6"),
+&"zoomin": SubResource("Animation_jbakk")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jbakk"]
+size = Vector3(0.23535156, 1, 1)
+
+[node name="RacePoint" type="Area3D" unique_id=206760533]
+priority = 1
+script = ExtResource("1_uiqf6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1139418009]
+shape = SubResource("BoxShape3D_uiqf6")
+debug_color = Color(0, 0.6392157, 0.3529412, 1)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1263058755]
+pixel_size = 0.002
+billboard = 1
+texture = SubResource("GradientTexture2D_jbakk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D" unique_id=297020057]
+libraries/ = SubResource("AnimationLibrary_2os2p")
+autoplay = &"zoomin"
+
+[node name="Area3D" type="Area3D" parent="." unique_id=458295130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11686584, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=139725379]
+shape = SubResource("BoxShape3D_jbakk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

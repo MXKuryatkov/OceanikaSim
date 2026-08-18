@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cv6dvkwv1jk4l"]
+
+[ext_resource type="Script" uid="uid://0ujw0a6b3clg" path="res://assets/editor/types/editor_scene.gd" id="1_2i6kd"]
+[ext_resource type="PackedScene" uid="uid://ddd16q2kuby76" path="res://assets/drones/piranya/piranya_mesh.scn" id="1_j4phd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2i6kd"]
+size = Vector3(0.3701172, 0.17163086, 0.32043457)
+
+[node name="EditorPiranya" type="Node3D" unique_id=1537868446]
+script = ExtResource("1_2i6kd")
+
+[node name="3DPiranya" parent="." unique_id=422592182 instance=ExtResource("1_j4phd")]
+transform = Transform3D(1.34, 0, 0, 0, 0, 1.34, 0, -1.34, 0, 0, 0, 0.066215225)
+
+[node name="PiranyaArea" type="Area3D" parent="." unique_id=139833588]
+collision_layer = 2
+collision_mask = 0
+input_ray_pickable = false
+
+[node name="PiranyaShape" type="CollisionShape3D" parent="PiranyaArea" unique_id=1205103735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04724121, 0.04888916)
+shape = SubResource("BoxShape3D_2i6kd")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BlockRes" format=3 uid="uid://b4inw4oi7ifh4"]
+
+[ext_resource type="PackedScene" uid="uid://8m5qh0nsdmu4" path="res://assets/program_editor/blocks/program_block_preset.tscn" id="1_di5s7"]
+[ext_resource type="Script" uid="uid://qu0uk3awc846" path="res://assets/program_editor/block_res.gd" id="2_o2rxp"]
+
+[resource]
+script = ExtResource("2_o2rxp")
+has_type = false
+block_name = "Установить скорость (проценты)"
+set_code_line = "bot::SetSpeed"
+metadata/_custom_type_script = "uid://qu0uk3awc846"

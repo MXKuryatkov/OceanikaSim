@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EditorObject" format=3 uid="uid://pwuyroao7tks"]
+
+[ext_resource type="Script" uid="uid://dw8elnv88x0do" path="res://assets/editor/types/editor_object.gd" id="1_j4jwf"]
+[ext_resource type="PackedScene" uid="uid://cxaoenxgl7u2j" path="res://assets/gates/race_point_editor.tscn" id="1_pu646"]
+[ext_resource type="PackedScene" uid="uid://n6ck0q84mt2" path="res://assets/gates/race_point.tscn" id="2_htdax"]
+
+[resource]
+script = ExtResource("1_j4jwf")
+display_name = "Точка пути"
+editor_scene = ExtResource("1_pu646")
+race_scene = ExtResource("2_htdax")
+default_config = Dictionary[String, Variant]({
+"object_to_wait": 0,
+"score": 4
+})
+type_map = Dictionary[String, String]({
+"object_to_wait": "node_id",
+"score": "int"
+})
+metadata/_custom_type_script = "uid://dw8elnv88x0do"

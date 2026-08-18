@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dvwtof634kkck"]
+
+[ext_resource type="Script" uid="uid://cto48mrygbafs" path="res://assets/menu/radio_connection.gd" id="1_wwyd6"]
+
+[node name="radio_connection" type="HBoxContainer" unique_id=86817177]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_wwyd6")
+
+[node name="Label" type="Label" parent="." unique_id=1701078013]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+text = "Пульт:"
+
+[node name="connected" type="Label" parent="." unique_id=1596801202]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.90588236, 0, 1)
+theme_override_constants/outline_size = 5
+text = "подключен"
+
+[node name="disconnected" type="Label" parent="." unique_id=2049794922]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "отключен"

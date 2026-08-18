@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EditorObject" format=3 uid="uid://dbt1b34qu2tsi"]
+
+[ext_resource type="PackedScene" uid="uid://bglfso504wwfp" path="res://testing/testing_objects/cube.tscn" id="1_dkim6"]
+[ext_resource type="PackedScene" uid="uid://cjl4u4qjrhv7k" path="res://testing/testing_objects/editor_cube.tscn" id="1_jesjf"]
+[ext_resource type="Script" uid="uid://dw8elnv88x0do" path="res://assets/editor/types/editor_object.gd" id="3_jesjf"]
+
+[resource]
+script = ExtResource("3_jesjf")
+display_name = "Обычный Кубик"
+editor_scene = ExtResource("1_jesjf")
+race_scene = ExtResource("1_dkim6")
+default_config = Dictionary[String, Variant]({
+"float": 0.0,
+"int": 0,
+"label": "hi",
+"node": 0,
+"vec3": Vector3(0, 0, 0)
+})
+type_map = Dictionary[String, String]({
+"int": "int",
+"node": "node_id"
+})
+metadata/_custom_type_script = "uid://dw8elnv88x0do"

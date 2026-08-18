@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EditorObject" format=3 uid="uid://4aj46wvg8bot"]
+
+[ext_resource type="Script" uid="uid://dw8elnv88x0do" path="res://assets/editor/types/editor_object.gd" id="1_2fc4w"]
+[ext_resource type="PackedScene" uid="uid://b1y0brd6yqbye" path="res://testing/testcube_editor.tscn" id="1_o73js"]
+[ext_resource type="PackedScene" uid="uid://dfvqgejb6w5v8" path="res://testing/testcube.tscn" id="2_y6ujr"]
+
+[resource]
+script = ExtResource("1_2fc4w")
+display_name = "Testcube"
+editor_scene = ExtResource("1_o73js")
+race_scene = ExtResource("2_y6ujr")
+metadata/_custom_type_script = "uid://dw8elnv88x0do"

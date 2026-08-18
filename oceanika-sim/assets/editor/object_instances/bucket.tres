@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EditorObject" format=3 uid="uid://53slo4bk4xfw"]
+
+[ext_resource type="Script" uid="uid://dw8elnv88x0do" path="res://assets/editor/types/editor_object.gd" id="1_mg5fw"]
+[ext_resource type="PackedScene" uid="uid://bt8hqkh8weqpw" path="res://assets/gates/editor_new_bucket.tscn" id="1_n5y0s"]
+[ext_resource type="PackedScene" uid="uid://ekaquqh6jbs" path="res://assets/gates/new_bucket.tscn" id="2_hryl8"]
+
+[resource]
+script = ExtResource("1_mg5fw")
+display_name = "Ведро"
+editor_scene = ExtResource("1_n5y0s")
+race_scene = ExtResource("2_hryl8")
+default_config = Dictionary[String, Variant]({
+"color": 4,
+"object_to_wait": 0,
+"score": 5
+})
+type_map = Dictionary[String, String]({
+"color": "color",
+"object_to_wait": "node_id",
+"score": "int"
+})
+metadata/_custom_type_script = "uid://dw8elnv88x0do"

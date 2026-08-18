@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://sjq2fodujlwm"]
+
+[ext_resource type="StyleBox" uid="uid://dn63ei5iq8w4k" path="res://assets/menu/styles/button_normal.tres" id="1_a1ikp"]
+[ext_resource type="StyleBox" uid="uid://cq6cuq5lvnus1" path="res://assets/menu/styles/button_pressed.tres" id="2_xkdtf"]
+[ext_resource type="StyleBox" uid="uid://c0h7606hnkk6s" path="res://assets/menu/styles/button_hover.tres" id="3_cuaks"]
+[ext_resource type="StyleBox" uid="uid://mhlru8l4tr4d" path="res://assets/menu/styles/button_focus.tres" id="4_kxm5d"]
+[ext_resource type="Script" uid="uid://b131nfnujn3tp" path="res://assets/menu/exit_to_menu.gd" id="5_xkdtf"]
+
+[node name="exit to menu" type="Button" unique_id=298768368]
+offset_right = 123.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_styles/normal = ExtResource("1_a1ikp")
+theme_override_styles/pressed = ExtResource("2_xkdtf")
+theme_override_styles/hover = ExtResource("3_cuaks")
+theme_override_styles/focus = ExtResource("4_kxm5d")
+text = "выход в меню"
+script = ExtResource("5_xkdtf")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://baxkuqe7jsxdw"]
+
+[ext_resource type="PackedScene" uid="uid://dfvqgejb6w5v8" path="res://testing/testcube.tscn" id="1_inls2"]
+[ext_resource type="PackedScene" uid="uid://n6ck0q84mt2" path="res://assets/gates/race_point.tscn" id="2_rqpha"]
+[ext_resource type="PackedScene" uid="uid://81y58tbrtvon" path="res://assets/logger/log.tscn" id="3_48sqj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_inls2"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_snxo3"]
+sky_material = SubResource("ProceduralSkyMaterial_inls2")
+
+[sub_resource type="Environment" id="Environment_rqpha"]
+background_mode = 2
+sky = SubResource("Sky_snxo3")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="PointsTest" type="Node3D" unique_id=539132488]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=779236426]
+environment = SubResource("Environment_rqpha")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1601759373]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1405360380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -1, -1)
+use_collision = true
+size = Vector3(10, 1, 9)
+
+[node name="Testcube" parent="." unique_id=792760876 instance=ExtResource("1_inls2")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=579273392]
+transform = Transform3D(1, 0, 0, 0, 0.46792978, 0.8837657, 0, -0.8837657, 0.46792978, -0.1578927, 4.357003, 3.1266115)
+
+[node name="RacePoint" parent="." unique_id=206760533 node_paths=PackedStringArray("object_to_wait") instance=ExtResource("2_rqpha")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.1411536, 0.32902944, -1.6562208)
+object_to_wait = NodePath("../Testcube")
+
+[node name="RacePoint2" parent="." unique_id=1429700910 node_paths=PackedStringArray("object_to_wait", "activate_after") instance=ExtResource("2_rqpha")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.1995652, 0.32902944, -1.6562208)
+object_to_wait = NodePath("../Testcube")
+activate_after = NodePath("../RacePoint")
+
+[node name="RacePoint3" parent="." unique_id=1184786104 node_paths=PackedStringArray("object_to_wait", "activate_after") instance=ExtResource("2_rqpha")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.1995652, 0.32902944, 1.9088224)
+object_to_wait = NodePath("../Testcube")
+activate_after = NodePath("../RacePoint2")
+
+[node name="RacePoint4" parent="." unique_id=1570332665 node_paths=PackedStringArray("object_to_wait", "activate_after") instance=ExtResource("2_rqpha")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.4209106, 0.32902944, 1.9088224)
+object_to_wait = NodePath("../Testcube")
+activate_after = NodePath("../RacePoint3")
+
+[node name="RacePoint5" parent="." unique_id=1691129294 node_paths=PackedStringArray("object_to_wait", "activate_after") instance=ExtResource("2_rqpha")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.4209106, 0.32902944, -2.2185774)
+object_to_wait = NodePath("../Testcube")
+activate_after = NodePath("../RacePoint4")
+
+[node name="RacePoint6" parent="." unique_id=1489719769 node_paths=PackedStringArray("object_to_wait", "activate_after") instance=ExtResource("2_rqpha")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.19729853, 0.32902944, 0.06550431)
+object_to_wait = NodePath("../Testcube")
+activate_after = NodePath("../RacePoint5")
+final = true
+
+[node name="Logger" parent="." unique_id=1854780885 instance=ExtResource("3_48sqj")]

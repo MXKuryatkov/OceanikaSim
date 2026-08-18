@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="SaveMaps" format=3 uid="uid://sq3x83n3ud4r"]
+
+[ext_resource type="Script" uid="uid://dw8elnv88x0do" path="res://assets/editor/types/editor_object.gd" id="1_1ckmu"]
+[ext_resource type="Script" uid="uid://063p3lvo1c7s" path="res://autoloads/SaveMaps.gd" id="2_2shxg"]
+[ext_resource type="Resource" uid="uid://dbt1b34qu2tsi" path="res://testing/testing_objects/cube.tres" id="2_fn7ug"]
+[ext_resource type="Resource" uid="uid://bvjcrkcgkqu5o" path="res://assets/editor/object_instances/kit.tres" id="2_k1xup"]
+[ext_resource type="Resource" uid="uid://cu53saed3d8hl" path="res://assets/editor/object_instances/piranya.tres" id="3_ghl4t"]
+[ext_resource type="Resource" uid="uid://ddrkqxlep55cg" path="res://testing/testing_objects/physics_cube.tres" id="3_xoafo"]
+[ext_resource type="Resource" uid="uid://b2p63se33hwix" path="res://assets/editor/object_instances/gate_point.tres" id="4_b70bu"]
+[ext_resource type="Resource" uid="uid://4aj46wvg8bot" path="res://assets/editor/object_instances/testcube.tres" id="5_0k4bt"]
+[ext_resource type="Resource" uid="uid://53slo4bk4xfw" path="res://assets/editor/object_instances/bucket.tres" id="8_mm0bl"]
+[ext_resource type="Resource" uid="uid://pxgolrgq077t" path="res://assets/editor/object_instances/gate.tres" id="9_xoafo"]
+[ext_resource type="Resource" uid="uid://pwuyroao7tks" path="res://assets/editor/object_instances/race_point.tres" id="10_0k4bt"]
+
+[resource]
+script = ExtResource("2_2shxg")
+save_maps = Dictionary[ExtResource("1_1ckmu"), String]({
+ExtResource("2_fn7ug"): "cube",
+ExtResource("3_xoafo"): "physics_cube",
+ExtResource("4_b70bu"): "gate_point",
+ExtResource("5_0k4bt"): "testcube",
+ExtResource("2_k1xup"): "kit",
+ExtResource("3_ghl4t"): "piranya",
+ExtResource("8_mm0bl"): "bucket",
+ExtResource("9_xoafo"): "gate",
+ExtResource("10_0k4bt"): "race_point"
+})
+metadata/_custom_type_script = "uid://063p3lvo1c7s"

@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://b5gco6jq57xyd"]
+
+[ext_resource type="Script" uid="uid://e0g424uhqoqr" path="res://assets/program_editor/blocks/cycle_block_preset.gd" id="1_wtkhh"]
+
+[node name="cycle_block_preset" type="GraphNode" unique_id=832004710]
+offset_right = 213.0
+offset_bottom = 106.0
+theme_override_constants/separation = 20
+theme_override_constants/port_h_offset = 5
+title = "Цикл"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = true
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color(1, 1, 1, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+script = ExtResource("1_wtkhh")
+
+[node name="GraphElement" type="GraphElement" parent="." unique_id=2110335610]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1724960390]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=943930844]
+layout_mode = 2
+text = "Повторять"
+
+[node name="choose" type="OptionButton" parent="HBoxContainer" unique_id=2032477211]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "n раз"
+popup/item_0/id = 1
+popup/item_1/text = "всегда"
+popup/item_1/id = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1386752170]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2" unique_id=1742664720]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "n:"
+
+[node name="count" type="SpinBox" parent="HBoxContainer2" unique_id=68353775]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 1000.0
+value = 1.0
+rounded = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="item_selected" from="HBoxContainer/choose" to="." method="_on_choose_item_selected"]
+[connection signal="value_changed" from="HBoxContainer2/count" to="." method="_on_count_value_changed"]

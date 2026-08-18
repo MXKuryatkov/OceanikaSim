@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://chfmkavqfpnmf"]
+
+[ext_resource type="Script" uid="uid://2mik580upwj1" path="res://assets/program_editor/drone_simulation/simulated_piranya.gd" id="1_57wmm"]
+[ext_resource type="PackedScene" uid="uid://ddd16q2kuby76" path="res://assets/drones/piranya/piranya_mesh.scn" id="1_ba84o"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_57wmm"]
+radius = 0.110839844
+height = 0.37597656
+
+[sub_resource type="Gradient" id="Gradient_hwexe"]
+offsets = PackedFloat32Array(0.5586854, 0.6, 0.6197183)
+colors = PackedColorArray(1, 1, 1, 0.101960786, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uk5we"]
+gradient = SubResource("Gradient_hwexe")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_338hy"]
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("GradientTexture2D_uk5we")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_i8eea"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_55k3c"]
+curve = SubResource("Curve_i8eea")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fk5ln"]
+emission_shape = 1
+emission_sphere_radius = 0.07
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, 0.2, 0)
+scale_min = 0.099999994
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_55k3c")
+collision_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_mrkxu"]
+size = Vector2(0.025, 0.025)
+
+[sub_resource type="Curve" id="Curve_npuxf"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_s4u42"]
+curve = SubResource("Curve_npuxf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yrwj8"]
+emission_shape = 1
+emission_sphere_radius = 0.07
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.099999994
+gravity = Vector3(0, 0.2, 0)
+scale_min = 0.099999994
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_s4u42")
+collision_mode = 2
+
+[node name="SimulatedPiranya" type="CharacterBody3D" unique_id=52472894]
+collision_layer = 3
+script = ExtResource("1_57wmm")
+
+[node name="3DPiranya" parent="." unique_id=422592182 instance=ExtResource("1_ba84o")]
+transform = Transform3D(1.34, 0, 0, 0, -5.857326e-08, 1.34, 0, -1.34, -5.857326e-08, 0, 0.041584108, 0.06534641)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1433045774]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 0, 0, 0.01952079)
+shape = SubResource("CapsuleShape3D_57wmm")
+
+[node name="height_particles" type="Node3D" parent="." unique_id=1238930381]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="height_particles" unique_id=445662457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11120231, 0, -0.0012974218)
+material_override = SubResource("StandardMaterial3D_338hy")
+process_material = SubResource("ParticleProcessMaterial_fk5ln")
+draw_pass_1 = SubResource("QuadMesh_mrkxu")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="height_particles" unique_id=68191301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.111, 0, -0.001)
+material_override = SubResource("StandardMaterial3D_338hy")
+process_material = SubResource("ParticleProcessMaterial_fk5ln")
+draw_pass_1 = SubResource("QuadMesh_mrkxu")
+
+[node name="move_particles" type="Node3D" parent="." unique_id=69231647]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="move_particles" unique_id=2069379786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11120231, 0, 0.08558111)
+material_override = SubResource("StandardMaterial3D_338hy")
+process_material = SubResource("ParticleProcessMaterial_yrwj8")
+draw_pass_1 = SubResource("QuadMesh_mrkxu")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="move_particles" unique_id=1585936993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.111, 0, 0.08587853)
+material_override = SubResource("StandardMaterial3D_338hy")
+process_material = SubResource("ParticleProcessMaterial_yrwj8")
+draw_pass_1 = SubResource("QuadMesh_mrkxu")
+
+[node name="lights" type="Node3D" parent="." unique_id=1884221269]
+visible = false
+
+[node name="SpotLight3D" type="SpotLight3D" parent="lights" unique_id=548330069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118754804, -0.0031643547, -0.08808652)
+light_energy = 0.5
+light_volumetric_fog_energy = 16.0
+spot_angle = 31.648073
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="lights" unique_id=1842032636]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119, -0.003, -0.088)
+light_energy = 0.5
+light_volumetric_fog_energy = 16.0
+spot_angle = 31.648073

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cmd1hsrqpy6lv"]
+
+[ext_resource type="Script" uid="uid://fgbogf80dla6" path="res://assets/editor/configurators/number_config.gd" id="1_tmb2g"]
+
+[node name="NumberConfig" type="HBoxContainer" unique_id=1834787221]
+offset_right = 301.0
+offset_bottom = 39.0
+script = ExtResource("1_tmb2g")
+
+[node name="Label" type="Label" parent="." unique_id=618841466]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "test"
+
+[node name="SpinBox" type="SpinBox" parent="." unique_id=1844448319]
+layout_mode = 2
+value = 2.0
+allow_greater = true
+select_all_on_focus = true
+
+[connection signal="value_changed" from="SpinBox" to="." method="_on_spin_box_value_changed"]

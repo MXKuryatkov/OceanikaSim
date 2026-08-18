@@ -1,0 +1,408 @@
+[gd_scene format=3 uid="uid://ci1f8el5loani"]
+
+[ext_resource type="PackedScene" uid="uid://b1bisepn53pvs" path="res://assets/program_editor/blocktype_container.tscn" id="1_chn3x"]
+[ext_resource type="Script" uid="uid://cnu2gkikpuy3o" path="res://assets/program_editor/program_editor_panel.gd" id="1_p24ha"]
+[ext_resource type="Theme" uid="uid://blclguf81pkdt" path="res://assets/menu/styles/font_theme.tres" id="2_fbfxg"]
+[ext_resource type="Script" uid="uid://br7n3uj7m76wp" path="res://assets/program_editor/top_panel.gd" id="3_pwrj6"]
+[ext_resource type="Script" uid="uid://qu0uk3awc846" path="res://assets/program_editor/block_res.gd" id="3_yodn2"]
+[ext_resource type="Texture2D" uid="uid://c26qq4ycvtqf4" path="res://assets/UI/build.png" id="4_6b6o7"]
+[ext_resource type="Texture2D" uid="uid://5lojjh2dbtsj" path="res://assets/UI/play.png" id="4_8b8vc"]
+[ext_resource type="Resource" uid="uid://jmkp6shmfl8" path="res://assets/program_editor/resources/kit/speed_block.tres" id="4_locd8"]
+[ext_resource type="Texture2D" uid="uid://lpydhbmo7fq2" path="res://assets/UI/run_remotely.png" id="4_ygctu"]
+[ext_resource type="Texture2D" uid="uid://c6ucr4o2tokef" path="res://assets/UI/editor_ui/stop-button.png" id="5_0ab12"]
+[ext_resource type="Resource" uid="uid://dc2lpgd2tq7r2" path="res://assets/program_editor/resources/kit/depth_block.tres" id="5_reb2a"]
+[ext_resource type="Resource" uid="uid://d3nbal0h81iwa" path="res://assets/program_editor/resources/kit/course_block.tres" id="6_jo6yo"]
+[ext_resource type="Texture2D" uid="uid://b32g0wc6dfx47" path="res://assets/UI/rotate-arrow.png" id="6_udulb"]
+[ext_resource type="Texture2D" uid="uid://crolgf3selojl" path="res://assets/UI/rotate-arrow_disabled.png" id="7_2iurl"]
+[ext_resource type="Resource" uid="uid://funcr075bhsi" path="res://assets/program_editor/resources/kit/pitch_block.tres" id="7_yodn2"]
+[ext_resource type="Resource" uid="uid://cnspnmxjhbe51" path="res://assets/program_editor/resources/kit/roll_block.tres" id="8_jytjg"]
+[ext_resource type="Script" uid="uid://dq3h300g1q5wj" path="res://assets/program_editor/blocks_container.gd" id="8_rskuq"]
+[ext_resource type="Resource" uid="uid://cmrt75yefce0c" path="res://assets/program_editor/resources/kit/headlights_block.tres" id="9_reb2a"]
+[ext_resource type="PackedScene" uid="uid://4g0ga340yl24" path="res://assets/program_editor/blocks/program_start_block.tscn" id="9_si8y6"]
+[ext_resource type="Texture2D" uid="uid://ciovfclckcw1s" path="res://assets/UI/build_disabled.png" id="9_x42w8"]
+[ext_resource type="Resource" uid="uid://cqe8hu85t2ach" path="res://assets/program_editor/resources/kit/laser_block.tres" id="10_jo6yo"]
+[ext_resource type="Texture2D" uid="uid://d3b4lpqq0xnmy" path="res://assets/UI/upload.png" id="10_m0ns6"]
+[ext_resource type="Resource" uid="uid://cb4grxcs60nm4" path="res://assets/program_editor/resources/kit/time_block.tres" id="11_jo6yo"]
+[ext_resource type="Resource" uid="uid://cxuhhv2cbd7dn" path="res://assets/program_editor/resources/kit/condition_block.tres" id="11_jytjg"]
+[ext_resource type="Texture2D" uid="uid://b1y5v8bbcvxgp" path="res://assets/UI/upload_disabled.png" id="11_r6vwj"]
+[ext_resource type="Resource" uid="uid://c2qfluccuif30" path="res://assets/program_editor/resources/kit/cycle_block.tres" id="11_yodn2"]
+[ext_resource type="Texture2D" uid="uid://osf0hs13yr5v" path="res://assets/UI/run_remotely_disabled.png" id="13_75ia7"]
+[ext_resource type="Resource" uid="uid://1gsj0epb35io" path="res://assets/program_editor/resources/kit/payload_block.tres" id="26_x42w8"]
+[ext_resource type="Resource" uid="uid://35vhxwl5fq0u" path="res://assets/program_editor/resources/kit/hand_block.tres" id="27_m0ns6"]
+[ext_resource type="Resource" uid="uid://dmabp23c08ugn" path="res://assets/program_editor/resources/piranya/forward_time.tres" id="28_d8tnr"]
+[ext_resource type="Resource" uid="uid://ct55gtk65biwv" path="res://assets/program_editor/resources/piranya/backward_time.tres" id="30_xoex0"]
+[ext_resource type="Resource" uid="uid://b4inw4oi7ifh4" path="res://assets/program_editor/resources/piranya/set_speed.tres" id="32_bupkb"]
+[ext_resource type="Resource" uid="uid://bkgy1o5y5630a" path="res://assets/program_editor/resources/piranya/change_depth_time.tres" id="32_j2ipt"]
+[ext_resource type="Resource" uid="uid://qk35n1463jff" path="res://assets/program_editor/resources/piranya/up.tres" id="32_rihaf"]
+[ext_resource type="Resource" uid="uid://bmx0ljkgrghim" path="res://assets/program_editor/resources/piranya/down.tres" id="33_1n2iq"]
+[ext_resource type="Resource" uid="uid://bxrfxueedmyat" path="res://assets/program_editor/resources/piranya/fix_depth.tres" id="33_6kgoh"]
+[ext_resource type="Resource" uid="uid://dvh17aq4m3nr5" path="res://assets/program_editor/resources/piranya/fix_course.tres" id="34_8tvas"]
+[ext_resource type="Resource" uid="uid://dy1eq6obp0qm5" path="res://assets/program_editor/resources/piranya/forward.tres" id="34_rihaf"]
+[ext_resource type="Resource" uid="uid://diw6q1mw66vly" path="res://assets/program_editor/resources/piranya/backward.tres" id="35_1n2iq"]
+[ext_resource type="Resource" uid="uid://y806smxjwca1" path="res://assets/program_editor/resources/piranya/headlight_on.tres" id="35_6w2tj"]
+[ext_resource type="Resource" uid="uid://dvs6i0qa6mcrv" path="res://assets/program_editor/resources/piranya/turn_left.tres" id="35_8tvas"]
+[ext_resource type="Resource" uid="uid://ckrt85e282kdx" path="res://assets/program_editor/resources/piranya/headlight_off.tres" id="35_e8ts3"]
+[ext_resource type="Resource" uid="uid://tpr1jiu4sk6j" path="res://assets/program_editor/resources/piranya/stop.tres" id="36_ns7pn"]
+[ext_resource type="Resource" uid="uid://c0k7ydnbq0wso" path="res://assets/program_editor/resources/piranya/turn_right.tres" id="36_ud0sa"]
+[ext_resource type="Resource" uid="uid://ddbqahlxailaa" path="res://assets/program_editor/resources/piranya/wait.tres" id="37_bupkb"]
+[ext_resource type="Resource" uid="uid://bkx5xyndqiqui" path="res://assets/program_editor/resources/piranya/reset_course.tres" id="37_ud0sa"]
+[ext_resource type="Script" uid="uid://cclylcvlyke8" path="res://assets/program_editor/program_text.gd" id="40_bupkb"]
+[ext_resource type="Resource" uid="uid://wepit8kvc7aq" path="res://assets/program_editor/resources/piranya/turn.tres" id="42_oo68e"]
+[ext_resource type="Resource" uid="uid://chh3ahxajw6r4" path="res://assets/program_editor/resources/piranya/cycle_block.tres" id="46_1n2iq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bupkb"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="ProgramEditor" type="VBoxContainer" unique_id=1596088891]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p24ha")
+
+[node name="top_panel" type="HBoxContainer" parent="." unique_id=1498236664 node_paths=PackedStringArray("program_saver")]
+layout_mode = 2
+theme = ExtResource("2_fbfxg")
+script = ExtResource("3_pwrj6")
+program_saver = NodePath("..")
+
+[node name="MenuBar" type="MenuBar" parent="top_panel" unique_id=1798407071]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 4
+flat = true
+
+[node name="PopupMenu" type="PopupMenu" parent="top_panel/MenuBar" unique_id=227588009]
+oversampling_override = 1.0
+title = "Файл"
+size = Vector2i(131, 100)
+extend_to_title = true
+item_count = 3
+item_0/text = "Создать"
+item_0/id = 0
+item_1/text = "Загрузить"
+item_1/id = 1
+item_2/text = "Сохранить"
+item_2/id = 2
+
+[node name="FileDialog" type="FileDialog" parent="top_panel" unique_id=892149131]
+oversampling_override = 1.0
+initial_position = 2
+dialog_hide_on_ok = true
+access = 2
+filters = PackedStringArray("*.ocsp; OceanikaProgram files")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="top_panel" unique_id=965033238]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="top_panel/HBoxContainer" unique_id=1911269772]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="top_panel/HBoxContainer/HBoxContainer" unique_id=102201542]
+layout_mode = 2
+text = "Симуляция:"
+
+[node name="run_simulation" type="TextureButton" parent="top_panel/HBoxContainer/HBoxContainer" unique_id=375601224]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("4_8b8vc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="stop_simulation" type="TextureButton" parent="top_panel/HBoxContainer/HBoxContainer" unique_id=697920217]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("5_0ab12")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="reset" type="TextureButton" parent="top_panel/HBoxContainer/HBoxContainer" unique_id=968723826]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("6_udulb")
+texture_disabled = ExtResource("7_2iurl")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="top_panel/HBoxContainer" unique_id=1975342717]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="top_panel/HBoxContainer/HBoxContainer2" unique_id=1108178960]
+layout_mode = 2
+text = "Дрон:"
+
+[node name="build" type="TextureButton" parent="top_panel/HBoxContainer/HBoxContainer2" unique_id=430990844]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("4_6b6o7")
+texture_disabled = ExtResource("9_x42w8")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="upload" type="TextureButton" parent="top_panel/HBoxContainer/HBoxContainer2" unique_id=1534110670]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("10_m0ns6")
+texture_disabled = ExtResource("11_r6vwj")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="run_remotely" type="TextureButton" parent="top_panel/HBoxContainer/HBoxContainer2" unique_id=2076665481]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("4_ygctu")
+texture_disabled = ExtResource("13_75ia7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="file_name" type="Label" parent="top_panel/HBoxContainer" unique_id=820231407]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+text = "Новая миссия"
+horizontal_alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1470895133]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+theme_override_constants/minimum_grab_thickness = 6
+split_offsets = PackedInt32Array(-67, 0)
+drag_area_highlight_in_editor = true
+split_offset = -67
+
+[node name="blocks_panel" type="Panel" parent="HSplitContainer" unique_id=382643873]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HSplitContainer/blocks_panel" unique_id=1260604381]
+layout_mode = 1
+offset_right = 50.0
+offset_bottom = 23.0
+text = "Блоки"
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/blocks_panel" unique_id=1005334981]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 23
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 25
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer/blocks_panel/MarginContainer" unique_id=3880751]
+layout_mode = 2
+split_offsets = PackedInt32Array(-175)
+dragging_enabled = false
+drag_area_highlight_in_editor = true
+split_offset = -175
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer" unique_id=1335200141]
+custom_minimum_size = Vector2(53.98, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="types_kit" type="VBoxContainer" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer/ScrollContainer2" unique_id=1141584852]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="blocktype_container" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer/ScrollContainer2/types_kit" unique_id=1936255968 instance=ExtResource("1_chn3x")]
+layout_mode = 2
+type_color = Color(0, 0.40798825, 0.9914674, 1)
+type_name = &"движение"
+blocks_array = Array[ExtResource("3_yodn2")]([ExtResource("4_locd8"), ExtResource("5_reb2a")])
+
+[node name="blocktype_container4" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer/ScrollContainer2/types_kit" unique_id=29952452 instance=ExtResource("1_chn3x")]
+layout_mode = 2
+type_color = Color(0.4722761, 0.27005216, 1, 1)
+type_name = &"поворот"
+blocks_array = Array[ExtResource("3_yodn2")]([ExtResource("6_jo6yo"), ExtResource("7_yodn2"), ExtResource("8_jytjg")])
+
+[node name="blocktype_container3" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer/ScrollContainer2/types_kit" unique_id=674420311 instance=ExtResource("1_chn3x")]
+layout_mode = 2
+type_color = Color(0.8066312, 0.3481967, 0.8641958, 1)
+type_name = &"свет"
+blocks_array = Array[ExtResource("3_yodn2")]([ExtResource("9_reb2a"), ExtResource("10_jo6yo")])
+
+[node name="blocktype_container2" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer/ScrollContainer2/types_kit" unique_id=456709342 instance=ExtResource("1_chn3x")]
+layout_mode = 2
+type_color = Color(0.96973497, 0.73268586, 0.28024033, 1)
+type_name = &"условия"
+blocks_array = Array[ExtResource("3_yodn2")]([ExtResource("11_jytjg"), ExtResource("11_jo6yo")])
+
+[node name="blocktype_container5" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer/ScrollContainer2/types_kit" unique_id=65300907 instance=ExtResource("1_chn3x")]
+layout_mode = 2
+type_color = Color(0.72164714, 0.33317325, 0.1245508, 1)
+type_name = &"циклы"
+blocks_array = Array[ExtResource("3_yodn2")]([ExtResource("11_yodn2")])
+
+[node name="blocktype_container6" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer/ScrollContainer2/types_kit" unique_id=356280519 instance=ExtResource("1_chn3x")]
+layout_mode = 2
+type_color = Color(0.22711223, 0.7216683, 0.81141955, 1)
+type_name = &"модули"
+blocks_array = Array[ExtResource("3_yodn2")]([ExtResource("26_x42w8"), ExtResource("27_m0ns6")])
+
+[node name="types_piranya" type="VBoxContainer" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer/ScrollContainer2" unique_id=817540657]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="blocktype_container" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer/ScrollContainer2/types_piranya" unique_id=27313244 instance=ExtResource("1_chn3x")]
+layout_mode = 2
+type_color = Color(0, 0.40798825, 0.9914674, 1)
+type_name = &"движение"
+blocks_array = Array[ExtResource("3_yodn2")]([ExtResource("28_d8tnr"), ExtResource("34_rihaf"), ExtResource("30_xoex0"), ExtResource("35_1n2iq"), ExtResource("32_rihaf"), ExtResource("33_1n2iq"), ExtResource("32_j2ipt"), ExtResource("32_bupkb"), ExtResource("33_6kgoh"), ExtResource("36_ns7pn")])
+
+[node name="blocktype_container4" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer/ScrollContainer2/types_piranya" unique_id=1534406039 instance=ExtResource("1_chn3x")]
+layout_mode = 2
+type_color = Color(0.4722761, 0.27005216, 1, 1)
+type_name = &"поворот"
+blocks_array = Array[ExtResource("3_yodn2")]([ExtResource("35_8tvas"), ExtResource("36_ud0sa"), ExtResource("42_oo68e"), ExtResource("37_ud0sa"), ExtResource("34_8tvas")])
+
+[node name="blocktype_container3" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer/ScrollContainer2/types_piranya" unique_id=1277739322 instance=ExtResource("1_chn3x")]
+layout_mode = 2
+type_color = Color(0.8066312, 0.3481967, 0.8641958, 1)
+type_name = &"свет"
+blocks_array = Array[ExtResource("3_yodn2")]([ExtResource("35_6w2tj"), ExtResource("35_e8ts3")])
+
+[node name="blocktype_container2" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer/ScrollContainer2/types_piranya" unique_id=1303697607 instance=ExtResource("1_chn3x")]
+layout_mode = 2
+type_color = Color(0.96973497, 0.73268586, 0.28024033, 1)
+type_name = &"условия"
+blocks_array = Array[ExtResource("3_yodn2")]([ExtResource("37_bupkb")])
+
+[node name="blocktype_container5" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer/ScrollContainer2/types_piranya" unique_id=478911704 instance=ExtResource("1_chn3x")]
+layout_mode = 2
+type_color = Color(0.72164714, 0.33317325, 0.1245508, 1)
+type_name = &"циклы"
+blocks_array = Array[ExtResource("3_yodn2")]([ExtResource("46_1n2iq")])
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer" unique_id=84212535]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="blocks" type="VBoxContainer" parent="HSplitContainer/blocks_panel/MarginContainer/HSplitContainer/ScrollContainer" unique_id=225646943]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+script = ExtResource("8_rskuq")
+
+[node name="program_editor" type="GraphEdit" parent="HSplitContainer" unique_id=47990505]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+right_disconnects = true
+connection_lines_curvature = 0.0
+minimap_enabled = false
+
+[node name="program_start_block" parent="HSplitContainer/program_editor" unique_id=1251775179 instance=ExtResource("9_si8y6")]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 295.0
+offset_right = 219.0
+offset_bottom = 350.0
+mouse_filter = 1
+position_offset = Vector2(39, 295)
+
+[node name="program_text" type="VBoxContainer" parent="HSplitContainer" unique_id=17022637]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("40_bupkb")
+
+[node name="top_panel" type="HBoxContainer" parent="HSplitContainer/program_text" unique_id=721372994]
+layout_mode = 2
+theme = ExtResource("2_fbfxg")
+
+[node name="MenuBar" type="MenuBar" parent="HSplitContainer/program_text/top_panel" unique_id=1874380738]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 4
+flat = true
+
+[node name="PopupMenu" type="PopupMenu" parent="HSplitContainer/program_text/top_panel/MenuBar" unique_id=934625933]
+oversampling_override = 1.0
+title = "Код"
+size = Vector2i(131, 100)
+extend_to_title = true
+item_count = 2
+item_0/text = "Очистить"
+item_0/id = 0
+item_1/text = "Сохранить"
+item_1/id = 1
+
+[node name="FileDialog" type="FileDialog" parent="HSplitContainer/program_text/top_panel" unique_id=490960563]
+oversampling_override = 1.0
+initial_position = 2
+dialog_hide_on_ok = true
+access = 2
+use_native_dialog = true
+
+[node name="program_text" type="TextEdit" parent="HSplitContainer/program_text" unique_id=1609941787]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_readonly_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_styles/read_only = SubResource("StyleBoxFlat_bupkb")
+placeholder_text = "Текст программы"
+editable = false
+
+[node name="autosave_timer" type="Timer" parent="." unique_id=648779885]
+wait_time = 90.0
+one_shot = true
+
+[node name="saving_label" type="Label" parent="." unique_id=2075863891]
+visible = false
+layout_mode = 2
+text = "SAVING..."
+
+[connection signal="id_pressed" from="top_panel/MenuBar/PopupMenu" to="top_panel" method="_on_popup_menu_id_pressed"]
+[connection signal="confirmed" from="top_panel/FileDialog" to="top_panel" method="_on_file_dialog_confirmed"]
+[connection signal="file_selected" from="top_panel/FileDialog" to="top_panel" method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="top_panel/HBoxContainer/HBoxContainer/run_simulation" to="." method="_on_run_simulation_pressed"]
+[connection signal="pressed" from="top_panel/HBoxContainer/HBoxContainer/stop_simulation" to="." method="_on_stop_simulation_pressed"]
+[connection signal="pressed" from="top_panel/HBoxContainer/HBoxContainer/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="top_panel/HBoxContainer/HBoxContainer2/build" to="." method="_on_build_pressed"]
+[connection signal="pressed" from="top_panel/HBoxContainer/HBoxContainer2/upload" to="." method="_on_upload_pressed"]
+[connection signal="pressed" from="top_panel/HBoxContainer/HBoxContainer2/run_remotely" to="." method="_on_run_remotely_pressed"]
+[connection signal="child_entered_tree" from="HSplitContainer/program_editor" to="." method="_on_program_editor_child_entered_tree"]
+[connection signal="connection_request" from="HSplitContainer/program_editor" to="." method="_on_program_panel_connection_request"]
+[connection signal="disconnection_request" from="HSplitContainer/program_editor" to="." method="_on_program_editor_disconnection_request"]
+[connection signal="id_pressed" from="HSplitContainer/program_text/top_panel/MenuBar/PopupMenu" to="HSplitContainer/program_text" method="_on_popup_menu_id_pressed"]
+[connection signal="file_selected" from="HSplitContainer/program_text/top_panel/FileDialog" to="HSplitContainer/program_text" method="_on_file_dialog_file_selected"]
+[connection signal="text_changed" from="HSplitContainer/program_text/program_text" to="HSplitContainer/program_text" method="_on_program_text_text_changed"]
+[connection signal="timeout" from="autosave_timer" to="top_panel" method="_on_autosave_timer_timeout"]

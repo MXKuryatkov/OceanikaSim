@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b1bisepn53pvs"]
+
+[ext_resource type="Script" uid="uid://5ywljyoe1b6s" path="res://assets/program_editor/blocktype_container.gd" id="1_mmt8v"]
+
+[sub_resource type="Gradient" id="Gradient_mmt8v"]
+offsets = PackedFloat32Array(0.548, 0.626)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mmt8v"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_mmt8v")
+width = 32
+height = 32
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="blocktype_container" type="VBoxContainer" unique_id=29952452]
+offset_right = 36.0
+offset_bottom = 47.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_mmt8v")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=219153802]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("GradientTexture2D_mmt8v")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=1801039992]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "block type"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

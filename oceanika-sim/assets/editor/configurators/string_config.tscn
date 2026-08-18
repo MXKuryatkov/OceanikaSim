@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bnkp0hgbul1hg"]
+
+[ext_resource type="Script" uid="uid://qu2hmbykc4oc" path="res://assets/editor/configurators/string_config.gd" id="1_xhymw"]
+
+[node name="StringConfig" type="HBoxContainer" unique_id=2076418702]
+offset_right = 417.0
+offset_bottom = 31.0
+script = ExtResource("1_xhymw")
+
+[node name="Label" type="Label" parent="." unique_id=977601529]
+layout_mode = 2
+text = "test"
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=901315480]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
