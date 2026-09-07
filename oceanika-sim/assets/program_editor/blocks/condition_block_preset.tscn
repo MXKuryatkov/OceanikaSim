@@ -2,11 +2,45 @@
 
 [ext_resource type="Script" uid="uid://bgu06x2o2emr5" path="res://assets/program_editor/blocks/condition_block_preset.gd" id="1_nyt48"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcite"]
+content_margin_left = 17.0
+content_margin_top = 17.0
+content_margin_right = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(0.73320305, 0.8015555, 0.9484592, 0.6784314)
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_or4cw"]
+bg_color = Color(0.73320305, 0.8015555, 0.9484592, 0.6784314)
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nvha"]
+content_margin_left = 7.0
+bg_color = Color(0.54635566, 0.6535528, 0.9036068, 0.6784314)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvo38"]
+content_margin_left = 7.0
+bg_color = Color(0.7921569, 0.654902, 0.9019608, 0.6784314)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_detail = 20
+
 [node name="condition_block_preset" type="GraphNode" unique_id=832004710]
-offset_right = 213.0
-offset_bottom = 106.0
+offset_right = 252.0
+offset_bottom = 151.0
 theme_override_constants/separation = 20
 theme_override_constants/port_h_offset = 5
+theme_override_styles/panel = SubResource("StyleBoxFlat_gcite")
+theme_override_styles/panel_selected = SubResource("StyleBoxFlat_or4cw")
+theme_override_styles/titlebar = SubResource("StyleBoxFlat_3nvha")
+theme_override_styles/titlebar_selected = SubResource("StyleBoxFlat_xvo38")
 title = "Условие"
 slot/0/left_enabled = true
 slot/0/left_type = 0

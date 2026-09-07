@@ -22,9 +22,8 @@ func _ready() -> void:
 
 func _on_mouse_entered() -> void:
 	can_press = true
-	if spawner: 
+	if spawner:
 		can_spawn = true
-
 
 func _on_mouse_exited() -> void:
 	can_press = false
@@ -59,15 +58,9 @@ func do_cycle_array():
 		if conn['to_node'] == self.name:
 			connections.erase(conn)
 	for connection in connections:
-		print('connections: ', connections)
-		print('self.name: ', self.name)
-		print('conn: ', connection)
 		if connection['from_port'] == 1 and connection['to_node'] != self.name:
-			print('do')
 			first_block_in_cycle = program_editor.get_node(str(connection['to_node']))
 			cycle_array = first_block_in_cycle.get_connected_blocks()
-
-	print('cycle_array: ', cycle_array)
 
 func _on_count_value_changed(_value: float) -> void:
 	repeats_count = int(_value)

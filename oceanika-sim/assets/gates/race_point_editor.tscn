@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cxaoenxgl7u2j"]
 
-[ext_resource type="Script" uid="uid://0ujw0a6b3clg" path="res://assets/editor/types/editor_scene.gd" id="1_klwvv"]
+[ext_resource type="Script" uid="uid://dxo2rvmiby7ah" path="res://assets/editor/types/editor_scene_selectable.gd" id="1_6s6np"]
 [ext_resource type="Texture2D" uid="uid://byjdoy0720qj6" path="res://assets/gates/right-arrow.png" id="2_6s6np"]
+[ext_resource type="Material" uid="uid://dx8wqgxkbo068" path="res://assets/editor/selection.tres" id="3_xspuy"]
 
 [sub_resource type="Gradient" id="Gradient_uiqf6"]
 offsets = PackedFloat32Array(0.25714287, 0.30612245, 0.46938777, 0.5, 0.56734693)
@@ -52,8 +53,13 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_klwvv"]
 size = Vector3(0.083984375, 0.39086914, 0.3955078)
 
-[node name="RacePointEditor" type="Node3D" unique_id=387134693]
-script = ExtResource("1_klwvv")
+[sub_resource type="BoxMesh" id="BoxMesh_31fg3"]
+material = ExtResource("3_xspuy")
+size = Vector3(0.049072266, 0.3935547, 0.40039063)
+
+[node name="RacePointEditor" type="Node3D" unique_id=387134693 node_paths=PackedStringArray("target")]
+script = ExtResource("1_6s6np")
+target = NodePath("SelectionBox")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1332495907]
 pixel_size = 0.002
@@ -76,3 +82,6 @@ input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1706095683]
 shape = SubResource("BoxShape3D_klwvv")
+
+[node name="SelectionBox" type="MeshInstance3D" parent="." unique_id=629027105]
+mesh = SubResource("BoxMesh_31fg3")

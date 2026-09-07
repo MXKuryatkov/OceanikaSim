@@ -42,8 +42,8 @@ var file_path := ""
 func start_race():
 	running = true
 	race_controller = RaceController.new()
-	race_controller.point_connections = way_editor.do_array([way_editor.way_editor.get_node(str(way_editor.start_node)).point_id], way_editor.start_node)
-	print(race_controller.point_connections)
+	if way_editor.way_editor.get_node(str(way_editor.start_node)) != null:
+		race_controller.point_connections = way_editor.do_array([way_editor.way_editor.get_node(str(way_editor.start_node)).point_id], way_editor.start_node)
 	race_controller.race_finished.connect(stop_race)
 	for scene: EditorScene in objects.get_children():
 		var o := scene.object.race_scene.instantiate()
@@ -100,7 +100,6 @@ func save_mission():
 				"point_id": child.point_id
 			})
 	way_editor_data["connections"] = way_editor.way_editor.connections
-	print('data: ', way_editor_data["connections"])
 	save_list.append(way_editor_data)
 	var save_file := FileAccess.open(file_path, FileAccess.WRITE)
 	save_file.store_var(save_list)
@@ -110,7 +109,6 @@ func clear():
 	for child in way_editor.way_editor.get_children():
 		if child is PointNode:
 			way_editor.way_editor.remove_child(child) #we cant call .queue_free() 'cause it deletes only on next frame, bruh...
-	print('points deleted: ', way_editor.way_editor.get_children())
 	select_scene(null)
 	for b: SelectionButton in scene_list.get_children(): b.queue_free()
 	for scene: EditorScene in objects.get_children(): scene.queue_free()
@@ -151,6 +149,8 @@ func load_mission():
 		last_id = max(last_id, scene.id+1)
 
 func select_scene(scene: EditorScene):
+	if selected_scene != null: selected_scene.deselect()
+	if scene != null: scene.select()
 	config_container.visible = scene != null
 	selected_scene = scene
 	for button: SelectionButton in scene_list.get_children():
@@ -198,8 +198,6 @@ func add_button(scene: EditorScene):
 	button.text = scene.object.display_name + " " + str(scene.id)
 	button.scene = scene
 	button.editor = self
-	button.flat = true
-	button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	scene_list.add_child(button)
 
 func remove_button(scene: EditorScene):
@@ -236,7 +234,7 @@ func configure_selector(button):
 @onready var viewport: Viewport = get_viewport()
 @onready var camera: Camera3D = viewport.get_camera_3d()
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("click"):
+	if event.is_action_released("click") and not $position_arrows.moving:
 		var mouse := viewport.get_mouse_position()
 		var origin := camera.project_ray_origin(mouse)
 		query.from = origin

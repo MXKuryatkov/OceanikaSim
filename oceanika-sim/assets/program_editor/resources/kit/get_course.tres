@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BlockWithoutValueRes" format=3 uid="uid://vql31s5r7jtf"]
+
+[ext_resource type="PackedScene" uid="uid://ck7yd2a4blp8k" path="res://assets/program_editor/blocks/program_block_without_value_preset.tscn" id="1_j667g"]
+[ext_resource type="Script" uid="uid://q72fhcv37k8c" path="res://assets/program_editor/block_without_value_res.gd" id="2_r8v2v"]
+
+[resource]
+script = ExtResource("2_r8v2v")
+has_type = false
+block_preset = ExtResource("1_j667g")
+block_name = "Получить текущий курс"
+set_code_line = "drone.get_course()"
+metadata/_custom_type_script = "uid://q72fhcv37k8c"

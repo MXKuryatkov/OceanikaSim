@@ -185,6 +185,33 @@ theme_override_styles/hover = ExtResource("7_r3hxg")
 theme_override_styles/focus = ExtResource("8_44dqb")
 text = "Разработчики: Курятков Максим, Артамонов Андрей, \"Океаника\""
 
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1541497093]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -296.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1834028783]
+layout_mode = 2
+text = "Техподдержка:"
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer" unique_id=2043884808]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_uneditable_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_constants/outline_size = 5
+text = "kit@oceanika.ru"
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+flat = true
+
 [connection signal="pressed" from="Panel/VBoxContainer/races" to="." method="_on_races_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/maps_making" to="." method="_on_maps_making_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/programming" to="." method="_on_programming_pressed"]

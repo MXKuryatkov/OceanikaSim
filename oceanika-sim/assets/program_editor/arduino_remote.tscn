@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://xsbyadn67nwq"]
+
+[ext_resource type="Script" uid="uid://dyjageky837qg" path="res://assets/program_editor/arduino_remote.gd" id="1_ip3cd"]
+
+[node name="ArduinoRemote" type="Node" unique_id=791216359]
+script = ExtResource("1_ip3cd")
+
+[node name="Timer" type="Timer" parent="." unique_id=1580920568]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

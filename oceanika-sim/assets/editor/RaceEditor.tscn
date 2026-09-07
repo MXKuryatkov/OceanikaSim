@@ -40,6 +40,7 @@
 [ext_resource type="Script" uid="uid://oylgw4ag234k" path="res://assets/editor/saver/top_panel.gd" id="36_mtaq4"]
 [ext_resource type="Script" uid="uid://d0vqpm03e2ug3" path="res://assets/races_world/stopwatch.gd" id="36_qtnsb"]
 [ext_resource type="PackedScene" uid="uid://d16an0a2nrr2j" path="res://assets/editor/way_editor/way_editor.tscn" id="38_gwrnf"]
+[ext_resource type="PackedScene" uid="uid://kbj3krxnxp4o" path="res://assets/menu/error_handler/ErrorWindow.tscn" id="41_vsoiu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pi1n8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -426,6 +427,10 @@ theme = ExtResource("20_gwrnf")
 
 [node name="PhysicsButton" type="Button" parent="Window/ScrollContainer/VBoxContainer" unique_id=375645624 node_paths=PackedStringArray("target")]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
 script = ExtResource("3_ktbdi")
 object = ExtResource("5_c3lng")
 target = NodePath("../../../..")
@@ -433,6 +438,10 @@ metadata/_custom_type_script = "uid://px8x7cp2f030"
 
 [node name="RacePointButton" type="Button" parent="Window/ScrollContainer/VBoxContainer" unique_id=1242782497 node_paths=PackedStringArray("target")]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
 script = ExtResource("3_ktbdi")
 object = ExtResource("7_l8hpo")
 target = NodePath("../../../..")
@@ -440,6 +449,10 @@ metadata/_custom_type_script = "uid://px8x7cp2f030"
 
 [node name="GateButton" type="Button" parent="Window/ScrollContainer/VBoxContainer" unique_id=635070700 node_paths=PackedStringArray("target")]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
 script = ExtResource("3_ktbdi")
 object = ExtResource("22_qtnsb")
 target = NodePath("../../../..")
@@ -447,6 +460,10 @@ metadata/_custom_type_script = "uid://px8x7cp2f030"
 
 [node name="KitButton" type="Button" parent="Window/ScrollContainer/VBoxContainer" unique_id=683785638 node_paths=PackedStringArray("target")]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
 script = ExtResource("3_ktbdi")
 object = ExtResource("9_d4nvt")
 target = NodePath("../../../..")
@@ -454,6 +471,10 @@ metadata/_custom_type_script = "uid://px8x7cp2f030"
 
 [node name="PiranyaButton" type="Button" parent="Window/ScrollContainer/VBoxContainer" unique_id=1347441442 node_paths=PackedStringArray("target")]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
 script = ExtResource("3_ktbdi")
 object = ExtResource("10_ce7yv")
 target = NodePath("../../../..")
@@ -461,6 +482,10 @@ metadata/_custom_type_script = "uid://px8x7cp2f030"
 
 [node name="BucketButton" type="Button" parent="Window/ScrollContainer/VBoxContainer" unique_id=1141415758 node_paths=PackedStringArray("target")]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
 script = ExtResource("3_ktbdi")
 object = ExtResource("14_g5oxp")
 target = NodePath("../../../..")
@@ -468,6 +493,10 @@ metadata/_custom_type_script = "uid://px8x7cp2f030"
 
 [node name="ObjectAdder" type="Button" parent="Window/ScrollContainer/VBoxContainer" unique_id=639438507 node_paths=PackedStringArray("target")]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
 script = ExtResource("3_ktbdi")
 object = ExtResource("11_mtaq4")
 target = NodePath("../../../..")
@@ -475,6 +504,10 @@ metadata/_custom_type_script = "uid://px8x7cp2f030"
 
 [node name="ObjectAdder2" type="Button" parent="Window/ScrollContainer/VBoxContainer" unique_id=2030055724 node_paths=PackedStringArray("target")]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_focus_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_hover_color = Color(0, 0.25882354, 0.53333336, 1)
 script = ExtResource("3_ktbdi")
 object = ExtResource("8_d4nvt")
 target = NodePath("../../../..")
@@ -685,11 +718,14 @@ dialog_hide_on_ok = true
 dialog_close_on_escape = false
 access = 2
 filters = PackedStringArray("*.ocs; OceanikaSim files")
+use_native_dialog = true
 
 [node name="file_name" type="Label" parent="CanvasLayer/top_panel" unique_id=820231407]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0.25882354, 0.53333336, 1)
+theme_override_colors/font_color = Color(0.46841633, 0.6976094, 0.99999124, 1)
+theme_override_colors/font_outline_color = Color(0, 0.19917127, 0.4163074, 1)
+theme_override_constants/outline_size = 4
 text = "Новая миссия"
 horizontal_alignment = 1
 
@@ -719,6 +755,9 @@ unique_name_in_owner = true
 [node name="autosave_timer" type="Timer" parent="." unique_id=1464536147]
 wait_time = 90.0
 one_shot = true
+
+[node name="ErrorWindow" parent="." unique_id=218893437 instance=ExtResource("41_vsoiu")]
+visible = false
 
 [connection signal="child_entered_tree" from="Objects" to="CanvasLayer/top_panel" method="_on_objects_child_entered_tree"]
 [connection signal="close_requested" from="Window" to="." method="close_object_window"]

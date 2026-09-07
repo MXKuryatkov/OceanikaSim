@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://kbj3krxnxp4o"]
+
+[ext_resource type="Script" uid="uid://facp7k2jkibj" path="res://assets/menu/error_handler/ErrorWindow.gd" id="1_n718x"]
+[ext_resource type="Texture2D" uid="uid://pnwcwpxdbkv7" path="res://assets/menu/error_handler/warning_icon.svg" id="2_0xh1g"]
+
+[node name="ErrorWindow" type="PopupPanel" unique_id=218893437]
+oversampling_override = 1.0
+title = "Обнаружена ошибка!!!"
+initial_position = 2
+size = Vector2i(314, 134)
+visible = true
+script = ExtResource("1_n718x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1534252589]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 310.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1594580476]
+layout_mode = 2
+text = "Обнаружена ошибка!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1410643127]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=240256236]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_0xh1g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ErrorText" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=202789417]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0, 0.14901961, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 20
+text = "error"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=382808928]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="CounterLabel" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=416488068]
+unique_name_in_owner = true
+layout_mode = 2
+text = "+10"
+
+[node name="CloseAllButton" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=584337802]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Закрыть все"
+
+[node name="CloseButton" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=1842602]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Закрыть"
+
+[connection signal="popup_hide" from="." to="." method="_on_popup_hide"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/CloseAllButton" to="." method="_on_close_all"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/CloseButton" to="." method="_on_popup_hide"]

@@ -32,8 +32,8 @@ func _ready() -> void:
 
 @onready var space_state = get_world_3d().direct_space_state
 @onready var query := PhysicsRayQueryParameters3D.create(Vector3.ZERO, Vector3.ZERO)
-@onready var viewport: Viewport = $VSplitContainer/SubViewportContainer/SubViewport
-@onready var camera: Camera3D = $VSplitContainer/SubViewportContainer/SubViewport/Camera3D
+@onready var viewport: Viewport = $HSplitContainer/SubViewportContainer/SubViewport
+@onready var camera: Camera3D = $HSplitContainer/SubViewportContainer/SubViewport/Camera3D
 var selected := false
 var click := false
 func _unhandled_input(event: InputEvent) -> void:
@@ -179,7 +179,6 @@ func goto_if(first_str, second_str, operation, target, inverse):
 				condition = !is_equal_approx(first, second)
 			else:
 				condition = first != second
-	print(first, " ", second, " ", condition)
 	if inverse: condition = !condition
 	if condition:
 		execution_point = target
@@ -204,7 +203,6 @@ func execute_command(command: Dictionary):
 		"increase":
 			if command.variable in variables:
 				variables[command.variable] = variables[command.variable] + 1
-				print(variables)
 		"end":
 			program_executor.execute_command(command)
 			stop_execution()
@@ -222,8 +220,12 @@ func execute_program():
 	executing = true
 	program_editor.do_array()
 	program_list = do_my_array(program_editor.commands_list)
+	if program_list.is_empty():
+		ErrorWindow.push_error("Ошибка в программе", "программа не может быть пустой. Стартовый блок должен быть подключен к остальным.")
+		executing = false
+		executed.emit()
+		return
 	program_list.push_back({"name": "end"})
-	print(program_list)
 	execution_point = 0
 	execute_command(program_list[execution_point])
 
@@ -244,7 +246,6 @@ func _on_reset() -> void:
 	program_executor.global_position = drone_start_position
 	program_executor.global_rotation = drone_start_rotation
 	program_executor.execute_command({"name": "reset"})
-	print('reseted')
 	stop_execution()
 
 func _on_stop_simulation() -> void:

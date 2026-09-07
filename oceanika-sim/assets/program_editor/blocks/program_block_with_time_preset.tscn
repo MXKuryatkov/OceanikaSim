@@ -2,10 +2,44 @@
 
 [ext_resource type="Script" uid="uid://c8l23mrjllht0" path="res://assets/program_editor/blocks/program_block_with_time_preset.gd" id="1_877dt"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcite"]
+content_margin_left = 17.0
+content_margin_top = 17.0
+content_margin_right = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(0.73320305, 0.8015555, 0.9484592, 0.6784314)
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_or4cw"]
+bg_color = Color(0.73320305, 0.8015555, 0.9484592, 0.6784314)
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nvha"]
+content_margin_left = 7.0
+bg_color = Color(0.54635566, 0.6535528, 0.9036068, 0.6784314)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvo38"]
+content_margin_left = 7.0
+bg_color = Color(0.7921569, 0.654902, 0.9019608, 0.6784314)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_detail = 20
+
 [node name="program_block_with_time_preset" type="GraphNode" unique_id=1545929935]
 offset_right = 226.0
 offset_bottom = 123.0
 theme_override_constants/port_h_offset = 5
+theme_override_styles/panel = SubResource("StyleBoxFlat_gcite")
+theme_override_styles/panel_selected = SubResource("StyleBoxFlat_or4cw")
+theme_override_styles/titlebar = SubResource("StyleBoxFlat_3nvha")
+theme_override_styles/titlebar_selected = SubResource("StyleBoxFlat_xvo38")
 title = "Название"
 slot/0/left_enabled = true
 slot/0/left_type = 0

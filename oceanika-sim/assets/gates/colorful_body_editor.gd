@@ -1,10 +1,14 @@
-extends EditorScene
+class_name ColorfulEditorScene
+extends EditorSceneSelectable
 
-@export var target: GeometryInstance3D
+@export var color_target: GeometryInstance3D
+
+var material := StandardMaterial3D.new()
 
 func _ready() -> void:
-	target.material_override = StandardMaterial3D.new()
+	super._ready()
+	color_target.material_override = material
 
 func update_config():
 	if config.color < ColorfulBody3D.colors.size():
-		target.material_override.albedo_color = ColorfulBody3D.colors[config.color]
+		color_target.material_override.albedo_color = ColorfulBody3D.colors[config.color]

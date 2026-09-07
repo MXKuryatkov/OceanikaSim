@@ -6,7 +6,7 @@ signal race_finished
 var point_connections: Array
 var laps: int = 1
 var current_lap: int = 0
-var race_score: int = 0
+var race_score: float = 0
 var fine: int = 0
 var stopwatch: Stopwatch
 var branch := []
@@ -32,7 +32,7 @@ func _process(_delta: float) -> void:
 	Log.monitor('branch', branch)
 
 func on_point_activation(id: int):
-	print('point_activate_id: ', id)
+	Log.monitor('point_activate_id', id)
 	if index == 0:
 		start_stopwatch()
 	if branch_starts.size() > 0:

@@ -31,7 +31,7 @@ func get_variable(var_name: String):
 
 func execute_command(command: Dictionary):
 	match command.name:
-		"Скорость":
+		"Движение вперед":
 			if command.type == 0:
 				target_speed = real_drone_speed * (command.value/100)
 			else:

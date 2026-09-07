@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c3hpngqlo7hkt" path="res://assets/races/Race.gd" id="3_l45td"]
 [ext_resource type="Resource" uid="uid://cdvamucjcqbtr" path="res://assets/races/races_res/Underwaterninja_newbie.tres" id="4_l45td"]
 [ext_resource type="StyleBox" uid="uid://mhlru8l4tr4d" path="res://assets/menu/styles/button_focus.tres" id="4_lp0m8"]
+[ext_resource type="Resource" uid="uid://k3tjrrkevxrk" path="res://assets/races/races_res/Cycleraces_newbie.tres" id="5_lnuix"]
 [ext_resource type="Texture2D" uid="uid://bsukco7p6ui6j" path="res://assets/UI/search.png" id="5_x35fy"]
 [ext_resource type="StyleBox" uid="uid://cv4vwathhelm8" path="res://assets/menu/styles/subpanel.tres" id="6_6rb78"]
 [ext_resource type="Texture2D" uid="uid://x160at8ngrlu" path="res://assets/UI/arrow.png" id="8_u5rhv"]
@@ -29,7 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_tl52s")
 script = ExtResource("2_e06li")
-races = Array[ExtResource("3_l45td")]([ExtResource("4_l45td")])
+races = Array[ExtResource("3_l45td")]([ExtResource("4_l45td"), ExtResource("5_lnuix")])
 
 [node name="race_choose_panel" type="Panel" parent="." unique_id=1734396500]
 layout_mode = 1
@@ -390,6 +391,7 @@ initial_position = 2
 file_mode = 0
 access = 2
 filters = PackedStringArray("*.ocs; OceanikaSim files")
+use_native_dialog = true
 
 [node name="radio_connection" parent="." unique_id=86817177 instance=ExtResource("19_abpcd")]
 layout_mode = 0

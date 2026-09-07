@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ca0xc7s1b8uad"]
 
 [ext_resource type="Script" uid="uid://nfxh1akb1hse" path="res://assets/gates/colorful_body_editor.gd" id="1_mydyt"]
+[ext_resource type="Material" uid="uid://dx8wqgxkbo068" path="res://assets/editor/selection.tres" id="2_jecmb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_e17re"]
 size = Vector3(0.1, 0.1, 0.1)
@@ -8,10 +9,15 @@ size = Vector3(0.1, 0.1, 0.1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_mydyt"]
 size = Vector3(0.099365234, 0.10253906, 0.1015625)
 
-[node name="MeshInstance3D" type="MeshInstance3D" unique_id=362319642 node_paths=PackedStringArray("target")]
+[sub_resource type="BoxMesh" id="BoxMesh_mydyt"]
+material = ExtResource("2_jecmb")
+size = Vector3(0.15332031, 0.1328125, 0.13574219)
+
+[node name="MeshInstance3D" type="MeshInstance3D" unique_id=362319642 node_paths=PackedStringArray("color_target", "target")]
 mesh = SubResource("BoxMesh_e17re")
 script = ExtResource("1_mydyt")
-target = NodePath(".")
+color_target = NodePath(".")
+target = NodePath("SelectionBox")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1182996239]
 collision_layer = 2
@@ -20,3 +26,6 @@ input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=976495412]
 shape = SubResource("BoxShape3D_mydyt")
+
+[node name="SelectionBox" type="MeshInstance3D" parent="." unique_id=1822768182]
+mesh = SubResource("BoxMesh_mydyt")

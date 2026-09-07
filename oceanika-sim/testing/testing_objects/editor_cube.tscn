@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cjl4u4qjrhv7k"]
+[gd_scene format=3 uid="uid://da6dge644rj57"]
 
 [ext_resource type="PackedScene" uid="uid://bglfso504wwfp" path="res://testing/testing_objects/cube.tscn" id="1_eja6k"]
 [ext_resource type="Texture2D" uid="uid://dbbdf40gju4wj" path="res://assets/UI/oceanika_logo_ru.png" id="2_0ei7j"]
@@ -6,6 +6,17 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pvdtm"]
 size = Vector3(0.29785156, 0.30078125, 0.29785156)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvdtm"]
+transparency = 1
+albedo_color = Color(0.7072708, 0.628516, 0.2522821, 0.22352941)
+emission_enabled = true
+emission = Color(0.5294118, 0.48235294, 0.22352941, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_uej6s"]
+material = SubResource("StandardMaterial3D_pvdtm")
+size = Vector3(0.26489258, 0.21905518, 0.22753906)
 
 [node name="EditorCube" unique_id=723797976 instance=ExtResource("1_eja6k")]
 script = ExtResource("2_yv87r")
@@ -23,3 +34,6 @@ monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1269502223]
 shape = SubResource("BoxShape3D_pvdtm")
+
+[node name="SelectionBox" type="MeshInstance3D" parent="." index="3" unique_id=1542967976]
+mesh = SubResource("BoxMesh_uej6s")

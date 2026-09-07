@@ -85,13 +85,13 @@ func get_point(global:bool = false) -> Vector3:
 	return point
 
 
-	
+
 func rotate_object(angle: float):
 	match current_axis:
 		axis.x: object_to_rotate.rotate_x(angle)
 		axis.y: object_to_rotate.rotate_y(angle)
 		axis.z: object_to_rotate.rotate_z(angle)
-	
+
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -100,10 +100,9 @@ func _input(event: InputEvent) -> void:
 			match current_axis:
 				axis.x:
 					angle = get_point().signed_angle_to(first_point, Vector3.RIGHT)
-					print('first: ', get_point(true).x)
 					if camera.global_position.x >= 0:
 						angle *= -1
-						
+
 				axis.y:
 					angle = get_point().signed_angle_to(first_point, Vector3.UP)
 					if camera.global_position.x >= 0:
@@ -113,12 +112,12 @@ func _input(event: InputEvent) -> void:
 					if camera.global_position.x <= 0:
 						angle *= -1
 			rotate_object(angle * mouse_sensitivity)
-			
+
 			rotating = true
 		else:
 			first_point = get_point()
-			
-	
+
+
 func _process(_delta: float) -> void:
 	if disabled:return
 
@@ -131,7 +130,6 @@ func _process(_delta: float) -> void:
 			if first_press:
 				first_point = get_point()
 				first_press = false
-		#print('press')
 	else:
 		if rotating:
 			current_axis = axis.none
@@ -141,26 +139,26 @@ func _process(_delta: float) -> void:
 		first_point = Vector3.ZERO
 		first_press = true
 		rotating = false
-		
-	
+
+
 	global_rotation = Vector3.ZERO
 	global_position = object_to_rotate.global_position
-	
+
 
 func _on_circle_mouse_entered(circle: Area3D) -> void:
 	if rotating: return
 	match circle.name:
-		'X': 
+		'X':
 			current_axis = axis.x
 			x_plane.get_child(0).disabled = false
 			y_plane.get_child(0).disabled = true
 			z_plane.get_child(0).disabled = true
-		'Y': 
+		'Y':
 			current_axis = axis.y
 			x_plane.get_child(0).disabled = true
 			y_plane.get_child(0).disabled = false
 			z_plane.get_child(0).disabled = true
-		'Z': 
+		'Z':
 			current_axis = axis.z
 			x_plane.get_child(0).disabled = true
 			y_plane.get_child(0).disabled = true

@@ -1,12 +1,10 @@
 class_name RacePoint
 extends Area3D
 
-signal activated(id: int)
-
 @onready var controller: RaceController = get_parent()
 
 var config: Dictionary
-var score: int = 25
+var score: float = 25
 var object_to_wait: Node3D = null
 var active = true
 var can_pass = false

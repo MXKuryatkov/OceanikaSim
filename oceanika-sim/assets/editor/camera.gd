@@ -31,6 +31,6 @@ func _process(delta: float) -> void:
 	else:
 		move = lerp(move, Vector3.ZERO, 10*delta)
 		velocity = move * current_speed
-		
+
 
 	position += velocity * delta

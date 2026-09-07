@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://cm3506q27nfny"]
 
-[ext_resource type="Script" uid="uid://0ujw0a6b3clg" path="res://assets/editor/types/editor_scene.gd" id="1_mnckm"]
+[ext_resource type="Script" uid="uid://dxo2rvmiby7ah" path="res://assets/editor/types/editor_scene_selectable.gd" id="1_xvhja"]
 [ext_resource type="PackedScene" uid="uid://c0fm6m84dxcnl" path="res://assets/drones/kit/mesh.scn" id="2_77p3f"]
+[ext_resource type="Material" uid="uid://dx8wqgxkbo068" path="res://assets/editor/selection.tres" id="3_7vjvp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_77p3f"]
 size = Vector3(0.2775879, 0.10900879, 0.31884766)
 
-[node name="EditorKit" type="Node3D" unique_id=1592842260]
-script = ExtResource("1_mnckm")
+[sub_resource type="BoxMesh" id="BoxMesh_ydgrf"]
+material = ExtResource("3_7vjvp")
+size = Vector3(0.28735352, 0.13873291, 0.33447266)
+
+[node name="EditorKit" type="Node3D" unique_id=1592842260 node_paths=PackedStringArray("target")]
+script = ExtResource("1_xvhja")
+target = NodePath("SelectionBox")
 
 [node name="3DKIT" parent="." unique_id=1117850185 instance=ExtResource("2_77p3f")]
 
@@ -19,3 +25,7 @@ input_ray_pickable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=546705631]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.030456543, 0.016357422)
 shape = SubResource("BoxShape3D_77p3f")
+
+[node name="SelectionBox" type="MeshInstance3D" parent="." unique_id=1741397234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.043914795, 0.014892578)
+mesh = SubResource("BoxMesh_ydgrf")

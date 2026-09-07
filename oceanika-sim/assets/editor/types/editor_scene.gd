@@ -10,3 +10,9 @@ func _process(_delta: float) -> void:
 
 func update_config():
 	pass
+
+func select():
+	pass
+
+func deselect():
+	pass

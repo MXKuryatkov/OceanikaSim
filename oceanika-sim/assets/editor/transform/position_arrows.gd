@@ -61,7 +61,6 @@ func move_object(to: Vector3):
 	object_to_move.global_position = new_position
 
 func _process(_delta: float) -> void:
-	print(not ($"../CanvasLayer/top_panel/FileDialog".visible))
 	if disabled: return
 	if not object_to_move:
 		hide()
@@ -104,6 +103,7 @@ func _on_arrow_mouse_exited() -> void:
 	current_axis = axis.none
 
 func _on_visibility_changed() -> void:
+	await get_tree().create_timer(1).timeout
 	collision_shape_x.disabled = !collision_shape_x.disabled
 	collision_shape_y.disabled = !collision_shape_y.disabled
 	collision_shape_z.disabled = !collision_shape_z.disabled

@@ -10,6 +10,7 @@ var moving := false
 var time_to_wait := INF
 var target_basis := Basis.IDENTITY
 var rotating := false
+var vertical_speed := 0.1
 var target_depth := 0.0
 var real_drone_speed = 0.4
 
@@ -23,9 +24,11 @@ func execute_command(command: Dictionary):
 			command_finished.emit()
 		"Вверх":
 			target_depth = 0
+			vertical_speed = 0.1
 			command_finished.emit()
 		"Вниз":
 			target_depth = -0.4
+			vertical_speed = 0.1
 			command_finished.emit()
 		"Вперед (время)":
 			target_speed = real_drone_speed
@@ -40,6 +43,7 @@ func execute_command(command: Dictionary):
 			command_finished.emit()
 		"Изменить глубину (глубина, время)":
 			target_depth = clampf(-command.value / 100, -0.45, 0)
+			vertical_speed = abs(target_depth - global_position.y) / command.time
 			time_to_wait = command.time
 		"Поворот направо (угол)":
 			target_basis = transform.basis.rotated(Vector3.UP, deg_to_rad(-command.value))
@@ -60,13 +64,16 @@ func execute_command(command: Dictionary):
 		"end":
 			target_speed = 0
 			target_depth = global_position.y
+			vertical_speed = 0.1
 		"Остановка":
 			target_speed = 0
 			target_depth = global_position.y
+			vertical_speed = 0.1
 			command_finished.emit()
 		"reset":
 			target_speed = 0
 			target_depth = 0
+			vertical_speed = 0.1
 		_:
 			Log.message("Unknown command: " + command.name, Log.Level.Warning)
 			command_finished.emit()
@@ -88,7 +95,7 @@ func _physics_process(delta: float) -> void:
 	v.y = move_toward(v.y, target_velocity.y, 1.6 * delta)
 	v.z = move_toward(v.z, target_velocity.z, 1.6 * delta)
 	velocity = v
-	global_position.y = move_toward(global_position.y, target_depth, 0.5 * delta)
+	global_position.y = move_toward(global_position.y, target_depth, vertical_speed * delta)
 	if rotating:
 		transform.basis = transform.basis.slerp(target_basis, 0.03)
 	move_and_slide()

@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_psvan")
-block_name = "Скорость"
+block_name = "Движение вперед"
 set_code_line = "drone.set_speed"
 change_code_line = "drone.change_speed"
 max_value = 100

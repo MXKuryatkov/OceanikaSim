@@ -42,7 +42,6 @@ func _input(event: InputEvent) -> void:
 			if can_spawn:
 				spawn()
 		elif event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT:
-			print(get_connected_blocks())
 			if can_delete and can_press:
 				queue_free()
 
@@ -59,7 +58,6 @@ func spawn():
 		block.param1_dict = param1_dict
 		program_editor.add_child(block)
 
-
 func get_connected_blocks(visited: Array = []) -> Array:
 	if self in visited:
 		return []
@@ -67,5 +65,4 @@ func get_connected_blocks(visited: Array = []) -> Array:
 	var result: Array = [self]
 	if connected_block != null and not connected_block in visited:
 		result += connected_block.get_connected_blocks(visited)
-	print('func called from: ', self.name, '\nresult: ', result)
 	return result

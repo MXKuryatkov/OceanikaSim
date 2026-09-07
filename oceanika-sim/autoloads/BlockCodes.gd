@@ -11,7 +11,7 @@ var piranya_script_start = '#include <Piranha.h>
 
 void DroneSetup(void)
 {
-	
+
 }
 
 void DroneLoop(void)
@@ -37,7 +37,6 @@ func code_program(blocks: Array[ProgramBlock]) -> String:
 		for block in blocks:
 			python_match_block_type(block)
 		python_script += kit_script_end
-		print(python_script)
 		return python_script
 	elif DroneToProgram.current_drone == DroneToProgram.Drone.piranya:
 		arduino_script = piranya_script_start
@@ -45,7 +44,6 @@ func code_program(blocks: Array[ProgramBlock]) -> String:
 		for block in blocks:
 			arduino_match_block_type(block)
 		arduino_script += piranya_script_end
-		print(arduino_script)
 		return arduino_script
 	return ''
 
@@ -83,7 +81,6 @@ func python_match_block_type(block):
 	elif block is CycleBlock:
 		tabs_coef += 1
 		block.do_cycle_array()
-		print('code_lines: ', block.code_lines)
 		python_script += block.code_lines[int(block.current_cycle)]
 		if block.current_cycle == block.CycleType.count:
 			python_script += '(' + str(block.repeats_count) + '):\n'
@@ -96,7 +93,6 @@ func python_match_block_type(block):
 
 	elif block is ConditionBlock:
 		block.do_arrays()
-		print('code_lines: ', block.code_lines)
 		if block.if_array != []:
 			tabs_coef += 1
 			python_script += 'if ' + block.param1_dict[block.param1_value] + block.sign + str(block.param2_value) + ':\n'
@@ -110,4 +106,3 @@ func python_match_block_type(block):
 					python_script += '	'.repeat(tabs_coef)
 					python_match_block_type(b)
 			tabs_coef -= 1
-		

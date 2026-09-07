@@ -1,11 +1,16 @@
 class_name SelectionButton
 extends Button
 
+const button_theme = preload("res://assets/editor/selection_theme.tres")
+
 var editor: RaceEditor
 var scene: EditorScene
 var configurator = null
 
 func _ready() -> void:
+	theme = button_theme
+	flat = true
+	alignment = HORIZONTAL_ALIGNMENT_LEFT
 	toggle_mode = true
 	add_to_group("selection_buttons")
 	pressed.connect(on_pressed)

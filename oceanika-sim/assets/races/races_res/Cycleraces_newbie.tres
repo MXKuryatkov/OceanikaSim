@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Race" format=3 uid="uid://k3tjrrkevxrk"]
+
+[ext_resource type="Texture2D" uid="uid://dpbne3nq445i" path="res://assets/races/races_icons/swimming-pool.png" id="1_o0x87"]
+[ext_resource type="Script" uid="uid://c3hpngqlo7hkt" path="res://assets/races/Race.gd" id="2_t5wfi"]
+
+[resource]
+script = ExtResource("2_t5wfi")
+name = "Подводный ниндзя (начинающий)"
+icon = ExtResource("1_o0x87")
+race_file_path = "res://assets/races/ocs files/Подводный ниндзя (начинающий).ocs"
+metadata/_custom_type_script = "uid://c3hpngqlo7hkt"
